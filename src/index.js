@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { SketchPicker } from "react-color";
 import Values from "values.js";
+import reshader from "reshader";
+
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import "./styles.css";
@@ -41,8 +43,9 @@ ${colors
 }
 
 function createTintsAndShades(color) {
-  const values = new Values(color);
-  return values.all().map(value => value.hex);
+  const { palette, variations } = reshader(color, { numberOfVariations: 6 });
+  // console.log(palette, variations);
+  return palette.map(value => value);
 }
 
 function App() {
