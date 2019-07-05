@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { SketchPicker } from "react-color";
 import reshader from "reshader";
-
+import Button from "@material-ui/core/Button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import "./styles.css";
@@ -52,7 +52,7 @@ function App() {
   const svgPalette = getSvg(tintAndShades);
 
   return (
-    <div className="App" style={{ backgroundColor: color }}>
+    <div className="App">
       <h1>Add a color</h1>
       <SketchPicker onChange={color => setColor(color.hex)} />
       <input value={color} />
@@ -64,7 +64,7 @@ function App() {
         text={svgPalette}
         // onCopy={() => this.setState({ copied: true })}
       >
-        <button style={{ backgroundColor: "white" }}>Copy to clipboard</button>
+        <Button type="primary">Copy to Clipboard</Button>
       </CopyToClipboard>
     </div>
   );
