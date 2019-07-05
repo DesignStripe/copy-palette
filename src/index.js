@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { SketchPicker } from "react-color";
+
 import reshader from "reshader";
+import { SketchPicker } from "react-color";
+
 import Button from "@material-ui/core/Button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -41,24 +43,26 @@ ${colors
   `;
 }
 
-function createTintsAndShades(color) {
+function createPalette(color) {
   const { palette } = reshader(color, { numberOfVariations: 4 });
   return palette;
 }
 
 function App() {
   const [color, setColor] = useState("#ff0000");
-  const tintAndShades = createTintsAndShades(color);
-  const svgPalette = getSvg(tintAndShades);
+  const palette = createPalette(color);
+  const svgPalette = getSvg(palette);
 
   return (
-    <div className="App">
-      <h1>Add a color</h1>
+    <div className="layout">
+      <h1>Palette2Figma</h1>
+      <p>
+        Create your palette and use it in figma by just using CTRL-C and CTRL-V
+      </p>
+
       <SketchPicker onChange={color => setColor(color.hex)} />
-      <input value={color} />
-      <div style={{ backgroundColor: "white" }}>
-        {tintAndShades.map(color => rectangle(color))}
-      </div>
+
+      <div>{palette.map(color => rectangle(color))}</div>
 
       <CopyToClipboard
         text={svgPalette}
