@@ -1,3 +1,8 @@
+* {
+  font-family: "Muli", sans-serif;
+  color: white;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -8,4 +13,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-color: #064acb;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview {
+  background-color: white;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.cta {
+  background-color: #f3a953 !important;
+  color: black !important;
+
+  text-transform: capitalize !important;
+  font-weight: bold !important;
 }

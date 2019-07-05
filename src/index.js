@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import reshader from "reshader";
+import NumericInput from "react-numeric-input";
 import { SketchPicker } from "react-color";
 
 import Button from "@material-ui/core/Button";
@@ -43,14 +44,16 @@ ${colors
   `;
 }
 
-function createPalette(color) {
-  const { palette } = reshader(color, { numberOfVariations: 4 });
+function createPalette(color, variations) {
+  const { palette } = reshader(color, { numberOfVariations: variations });
   return palette;
 }
 
 function App() {
   const [color, setColor] = useState("#ff0000");
-  const palette = createPalette(color);
+  const [variations, setVariations] = useState(4);
+
+  const palette = createPalette(color, variations);
   const svgPalette = getSvg(palette);
 
   return (
@@ -61,14 +64,27 @@ function App() {
       </p>
 
       <SketchPicker onChange={color => setColor(color.hex)} />
+      <NumericInput
+        min={2}
+        max={9}
+        value={variations}
+        onChange={num => setVariations(num)}
+      />
 
-      <div>{palette.map(color => rectangle(color))}</div>
+      <div className="preview">{palette.map(color => rectangle(color))}</div>
 
       <CopyToClipboard
         text={svgPalette}
         // onCopy={() => this.setState({ copied: true })}
       >
-        <Button type="primary">Copy to Clipboard</Button>
+        <Button
+          variant="contained"
+          color="primary"
+          // style={{ backgroundColor: "#212121" }}
+          className="cta"
+        >
+          Copy to Clipboard
+        </Button>
       </CopyToClipboard>
     </div>
   );
