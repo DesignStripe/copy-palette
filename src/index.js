@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { SketchPicker } from "react-color";
-import Values from "values.js";
 import reshader from "reshader";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -35,7 +34,7 @@ ${colors
   .map(
     (color, index) =>
       `<rect width="${width}" height="${width}" y="0" x="${index *
-        (offset + width)}" style="fill: #${color}" />`
+        (offset + width)}" style="fill: ${color}" />`
   )
   .join(" \n")}
 </svg>
@@ -43,15 +42,14 @@ ${colors
 }
 
 function createTintsAndShades(color) {
-  const { palette, variations } = reshader(color, { numberOfVariations: 6 });
-  // console.log(palette, variations);
-  return palette.map(value => value);
+  const { palette } = reshader(color, { numberOfVariations: 4 });
+  return palette;
 }
 
 function App() {
   const [color, setColor] = useState("#ff0000");
   const tintAndShades = createTintsAndShades(color);
-  const rects = getSvg(tintAndShades);
+  const svgPalette = getSvg(tintAndShades);
 
   return (
     <div className="App" style={{ backgroundColor: color }}>
@@ -59,14 +57,14 @@ function App() {
       <SketchPicker onChange={color => setColor(color.hex)} />
       <input value={color} />
       <div style={{ backgroundColor: "white" }}>
-        {tintAndShades.map(hex => rectangle(hex))}
+        {tintAndShades.map(color => rectangle(color))}
       </div>
 
       <CopyToClipboard
-        text={rects}
+        text={svgPalette}
         // onCopy={() => this.setState({ copied: true })}
       >
-        <span style={{ backgroundColor: "white" }}>Copy to clipboard</span>
+        <button style={{ backgroundColor: "white" }}>Copy to clipboard</button>
       </CopyToClipboard>
     </div>
   );
