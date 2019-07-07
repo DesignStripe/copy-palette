@@ -6,6 +6,7 @@ import NumericInput from "react-numeric-input";
 import { SketchPicker } from "react-color";
 
 import Button from "@material-ui/core/Button";
+import Slider from "@material-ui/core/Slider";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import "./styles.css";
@@ -44,16 +45,20 @@ ${colors
   `;
 }
 
-function createPalette(color, variations) {
-  const { palette } = reshader(color, { numberOfVariations: variations });
+function createPalette(color, variations, contrast) {
+  const { palette } = reshader(color, {
+    numberOfVariations: variations,
+    contrastRatio: contrast
+  });
   return palette;
 }
 
 function App() {
   const [color, setColor] = useState("#ff0000");
   const [variations, setVariations] = useState(4);
+  const [contrast, setContrast] = useState(0.2);
 
-  const palette = createPalette(color, variations);
+  const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette);
 
   return (
@@ -69,6 +74,16 @@ function App() {
         max={9}
         value={variations}
         onChange={num => setVariations(num)}
+      />
+      <Slider
+        value={contrast}
+        onChange={(e, newValue) => {
+          setContrast(newValue);
+        }}
+        aria-labelledby="continuous-slider"
+        step={0.05}
+        min={0.05}
+        max={0.7}
       />
 
       <div className="preview">{palette.map(color => rectangle(color))}</div>
