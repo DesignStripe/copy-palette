@@ -68,7 +68,7 @@ function App() {
         Create your palette and use it in figma by just using CTRL-C and CTRL-V
       </p>
 
-      <SketchPicker onChange={color => setColor(color.hex)} />
+      <SketchPicker color={color} onChange={color => setColor(color.hex)} />
       <NumericInput
         min={2}
         max={9}

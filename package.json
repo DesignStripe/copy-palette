@@ -13,6 +13,7 @@
     "react-numeric-input": "2.2.3",
     "react-scripts": "3.0.1",
     "reshader": "1.0.0",
+    "styled-components": "4.3.2",
     "values.js": "1.0.3"
   },
   "devDependencies": {
