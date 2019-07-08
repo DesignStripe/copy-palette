@@ -1,7 +1,7 @@
 {
   "name": "palettes2figma",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hassle-free export your palette to Figma",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

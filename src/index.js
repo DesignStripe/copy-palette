@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Slider from "@material-ui/core/Slider";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import Badge from "./components/Badge";
 import "./styles.css";
 
 const width = 20;
@@ -65,7 +66,8 @@ function App() {
     <div className="layout">
       <h1>Palette2Figma</h1>
       <p>
-        Create your palette and use it in figma by just using CTRL-C and CTRL-V
+        Create your palette and use it in figma by just using{" "}
+        <Badge>CTRL-C</Badge> and <Badge>CTRL-V</Badge>
       </p>
 
       <SketchPicker color={color} onChange={color => setColor(color.hex)} />
