@@ -15,8 +15,8 @@ import "./styles.css";
 const width = 20;
 const offset = 20;
 
-function rectangle(color, isMiddle) {
-  const size = isMiddle ? 40 : width;
+function rectangle(color, isBaseColor) {
+  const size = isBaseColor ? 40 : width;
   return (
     <svg x="0" y={offset} width={size} height={size} style={{ margin: "1rem" }}>
       <rect width={size} height={size} style={{ fill: color }} />
@@ -85,8 +85,8 @@ function App() {
 
       <div className="preview row">
         {palette.map((color, index) => {
-          const isMiddle = index === variations;
-          return rectangle(color, isMiddle);
+          const isBaseColor = index === variations;
+          return rectangle(color, isBaseColor);
         })}
       </div>
 
