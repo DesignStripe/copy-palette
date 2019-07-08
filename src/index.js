@@ -15,16 +15,11 @@ import "./styles.css";
 const width = 20;
 const offset = 20;
 
-function rectangle(color) {
+function rectangle(color, isMiddle) {
+  const size = isMiddle ? 40 : width;
   return (
-    <svg
-      x="0"
-      y={offset}
-      width={width}
-      height={width}
-      style={{ margin: "1rem" }}
-    >
-      <rect width={width} height={width} style={{ fill: color }} />
+    <svg x="0" y={offset} width={size} height={size} style={{ margin: "1rem" }}>
+      <rect width={size} height={size} style={{ fill: color }} />
     </svg>
   );
 }
@@ -88,7 +83,12 @@ function App() {
         max={0.7}
       />
 
-      <div className="preview">{palette.map(color => rectangle(color))}</div>
+      <div className="preview row">
+        {palette.map((color, index) => {
+          const isMiddle = index === variations;
+          return rectangle(color, isMiddle);
+        })}
+      </div>
 
       <CopyToClipboard
         text={svgPalette}
