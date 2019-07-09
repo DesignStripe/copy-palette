@@ -15,18 +15,24 @@ const Input = styled.input`
   font-weight: bold;
 `;
 
-const Minus = styled.div`
+const Minus = styled.button`
+  border: none;
   width: 40px;
   height: 40px;
   border-radius: 8px;
   background-color: ${colors.secondary};
+  font-size: 16px;
+  font-weight: bold;
 `;
 
-const Add = styled.div`
+const Add = styled.button`
+  border: none;
   width: 40px;
   height: 40px;
   border-radius: 8px;
   background-color: ${colors.secondary};
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 const Row = styled.div`
@@ -34,17 +40,32 @@ const Row = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  & > * {
+    margin-right: 0.5rem;
+  }
+  & > *:last-child {
+    margin-right: 0;
+  }
 `;
 
-const NumberInput = (onChange, defaultValue) => {
-  const [value, setValue] = useState(defaultValue);
-
+const NumberInput = (onChange, defaultValue, min, max) => {
+  const [value, setValue] = useState(4);
   const reduce = () => setValue(value - 1);
   const add = () => setValue(value + 1);
 
+  const disableMinus = value === min;
+  const disableAdd = value === max;
+
   return (
     <Row>
-      <Input /> <Minus onClick={reduce} /> <Add onClick={add} />
+      <Input value={value} onChange={e => setValue(e.target.value)} />
+      <Minus onClick={reduce} isDisabled={disableMinus}>
+        -
+      </Minus>
+      <Add onClick={add} isDisabled={disableAdd}>
+        +
+      </Add>
     </Row>
   );
 };

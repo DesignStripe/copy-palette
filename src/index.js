@@ -77,6 +77,7 @@ function App() {
         min={2}
         max={9}
         value={variations}
+        defaultValue={variations}
         onChange={num => setVariations(num)}
       />
       <Slider
