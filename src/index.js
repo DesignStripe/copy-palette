@@ -10,6 +10,7 @@ import Slider from "@material-ui/core/Slider";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import Badge from "./components/Badge";
+import NumberInput from "./components/NumberInput";
 import "./styles.css";
 
 const width = 20;
@@ -67,6 +68,12 @@ function App() {
 
       <SketchPicker color={color} onChange={color => setColor(color.hex)} />
       <NumericInput
+        min={2}
+        max={9}
+        value={variations}
+        onChange={num => setVariations(num)}
+      />
+      <NumberInput
         min={2}
         max={9}
         value={variations}
