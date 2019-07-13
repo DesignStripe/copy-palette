@@ -8,16 +8,35 @@ import { SketchPicker } from "react-color";
 import Button from "@material-ui/core/Button";
 import Slider from "@material-ui/core/Slider";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import styled from "styled-components";
 
 import Badge from "./components/Badge";
 import Picker from "./components/Picker";
 import NumberInput from "./components/NumberInput";
 import "./styles.css";
+import OptionsGroup from "./components/OptionsGroup";
 import Option from "./components/Option";
 import { FiCode, FiAirplay } from "react-icons/fi";
 
 const width = 20;
 const offset = 20;
+
+const Container = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    margin-bottom: 32px;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  background-color: #064acb;
+`;
 
 function rectangle(color, isBaseColor) {
   const size = isBaseColor ? 40 : width;
@@ -65,39 +84,41 @@ function App() {
   const Rectangle = rectangle(color, false);
 
   return (
-    <div className="layout">
+    <Container>
       <h1>Palette2Figma</h1>
       <p>
         Create your palette and use it in figma by just using{" "}
         <Badge>CTRL-C</Badge> and <Badge>CTRL-V</Badge>
       </p>
 
-      <Option icon={<FiCode />} label={"Base Color:"}>
-        <Picker onChange={setColor} />
-      </Option>
+      <OptionsGroup>
+        <Option icon={<FiCode />} label={"Base Color:"}>
+          <Picker onChange={setColor} />
+        </Option>
 
-      <Option icon={<FiCode />} label={"Variations:"}>
-        <NumberInput
-          min={2}
-          max={9}
-          value={variations}
-          defaultValue={variations}
-          onChange={num => setVariations(num)}
-        />
-      </Option>
+        <Option icon={<FiCode />} label={"Variations:"}>
+          <NumberInput
+            min={2}
+            max={9}
+            value={variations}
+            defaultValue={variations}
+            onChange={num => setVariations(num)}
+          />
+        </Option>
 
-      <Option icon={<FiCode />} label={"Contrast:"}>
-        <Slider
-          value={contrast}
-          onChange={(e, newValue) => {
-            setContrast(newValue);
-          }}
-          aria-labelledby="continuous-slider"
-          step={0.05}
-          min={0.05}
-          max={0.7}
-        />
-      </Option>
+        <Option icon={<FiCode />} label={"Contrast:"}>
+          <Slider
+            value={contrast}
+            onChange={(e, newValue) => {
+              setContrast(newValue);
+            }}
+            aria-labelledby="continuous-slider"
+            step={0.05}
+            min={0.05}
+            max={0.7}
+          />
+        </Option>
+      </OptionsGroup>
 
       {/* <Picker onClick={() => setDisplayColorPicker(!displayColorPicker)} />
 
@@ -131,7 +152,7 @@ function App() {
           Copy to Clipboard
         </Button>
       </CopyToClipboard>
-    </div>
+    </Container>
   );
 }
 
