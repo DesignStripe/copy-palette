@@ -5,12 +5,21 @@ import { SketchPicker } from "react-color";
 
 const Container = styled.div`
   border-radius: 8px;
-  width: 60px;
-  height: 44px;
   background-color: white;
+  padding: 0.5rem;
 
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    size: 1rem;
+    stroke: black;
+  }
 `;
 
 const Color = styled.div`
