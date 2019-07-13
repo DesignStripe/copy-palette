@@ -19,6 +19,7 @@ const Container = styled.div`
     height: 1rem;
     size: 1rem;
     stroke: black;
+    cursor: pointer;
   }
 `;
 
@@ -27,19 +28,20 @@ const Color = styled.div`
   width: 28px;
   height: 28px;
   background-color: ${props => props.color};
+  cursor: pointer;
 `;
 
 const Popover = styled.div`
-  position: absolute;
+  position: relative;
   z-index: 2;
 `;
 
 const Cover = styled.div`
-  position: fixed;
-  top: 0px;
-  right: 0px;
+  position: absolute;
+  top: 28px;
+  right: 0;
   bottom: 0px;
-  left: 0px;
+  left: -60px;
 `;
 
 const Picker = ({ onChange, value }) => {
@@ -51,13 +53,17 @@ const Picker = ({ onChange, value }) => {
     onChange(color.hex);
   };
 
+  const open = () => setIsOpen(true);
+  const close = () => setIsOpen(false);
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <Container>
-      <Color color={color} />
+      <Color color={color} onClick={toggle} />
       {isOpen ? (
-        <FiChevronUp onClick={() => setIsOpen(false)} />
+        <FiChevronUp onClick={toggle} />
       ) : (
-        <FiChevronDown onClick={() => setIsOpen(true)} />
+        <FiChevronDown onClick={toggle} />
       )}
       {isOpen && (
         <Popover>
