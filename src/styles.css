@@ -1,6 +1,7 @@
 * {
   font-family: "Muli", sans-serif;
   color: white;
+  margin: 0;
 }
 
 .App {
@@ -23,6 +24,7 @@
 }
 
 .layout {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
