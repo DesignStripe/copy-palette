@@ -13,6 +13,8 @@ import Badge from "./components/Badge";
 import Picker from "./components/Picker";
 import NumberInput from "./components/NumberInput";
 import "./styles.css";
+import Option from "./components/Option";
+import { FiCode, FiAirplay } from "react-icons/fi";
 
 const width = 20;
 const offset = 20;
@@ -70,7 +72,33 @@ function App() {
         <Badge>CTRL-C</Badge> and <Badge>CTRL-V</Badge>
       </p>
 
-      <Picker onChange={setColor} />
+      <Option icon={<FiCode />} label={"Base Color:"}>
+        <Picker onChange={setColor} />
+      </Option>
+
+      <Option icon={<FiCode />} label={"Variations:"}>
+        <NumberInput
+          min={2}
+          max={9}
+          value={variations}
+          defaultValue={variations}
+          onChange={num => setVariations(num)}
+        />
+      </Option>
+
+      <Option icon={<FiCode />} label={"Contrast:"}>
+        <Slider
+          value={contrast}
+          onChange={(e, newValue) => {
+            setContrast(newValue);
+          }}
+          aria-labelledby="continuous-slider"
+          step={0.05}
+          min={0.05}
+          max={0.7}
+        />
+      </Option>
+
       {/* <Picker onClick={() => setDisplayColorPicker(!displayColorPicker)} />
 
       {displayColorPicker && (
@@ -82,23 +110,6 @@ function App() {
         value={variations}
         onChange={num => setVariations(num)}
       /> */}
-      <NumberInput
-        min={2}
-        max={9}
-        value={variations}
-        defaultValue={variations}
-        onChange={num => setVariations(num)}
-      />
-      <Slider
-        value={contrast}
-        onChange={(e, newValue) => {
-          setContrast(newValue);
-        }}
-        aria-labelledby="continuous-slider"
-        step={0.05}
-        min={0.05}
-        max={0.7}
-      />
 
       <div className="preview row">
         {palette.map((color, index) => {
