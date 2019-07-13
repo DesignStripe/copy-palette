@@ -10,6 +10,7 @@ import Slider from "@material-ui/core/Slider";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import Badge from "./components/Badge";
+import Picker from "./components/Picker";
 import NumberInput from "./components/NumberInput";
 import "./styles.css";
 
@@ -51,12 +52,15 @@ function createPalette(color, variations, contrast) {
 }
 
 function App() {
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState("#ff0000");
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.2);
 
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette);
+
+  const Rectangle = rectangle(color, false);
 
   return (
     <div className="layout">
@@ -66,13 +70,18 @@ function App() {
         <Badge>CTRL-C</Badge> and <Badge>CTRL-V</Badge>
       </p>
 
-      <SketchPicker color={color} onChange={color => setColor(color.hex)} />
-      <NumericInput
+      <Picker onChange={setColor} />
+      {/* <Picker onClick={() => setDisplayColorPicker(!displayColorPicker)} />
+
+      {displayColorPicker && (
+        <SketchPicker color={color} onChange={color => setColor(color.hex)} />
+      )} */}
+      {/* <NumericInput
         min={2}
         max={9}
         value={variations}
         onChange={num => setVariations(num)}
-      />
+      /> */}
       <NumberInput
         min={2}
         max={9}
