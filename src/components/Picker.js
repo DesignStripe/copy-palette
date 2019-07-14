@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { SketchPicker } from "react-color";
+import useOutsideClick from "../hooks/useOutsideClick";
 
 const Container = styled.div`
   border-radius: 8px;
@@ -45,6 +46,12 @@ const Cover = styled.div`
 `;
 
 const Picker = ({ onChange, value }) => {
+  const ref = useRef();
+
+  useOutsideClick(ref, () => {
+    if (isOpen) setIsOpen(false);
+  });
+
   const [color, setColor] = useState(value || "red");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,7 +63,7 @@ const Picker = ({ onChange, value }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Container>
+    <Container ref={ref}>
       <Color color={color} onClick={toggle} />
       {isOpen ? (
         <FiChevronUp onClick={toggle} />
