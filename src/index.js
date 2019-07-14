@@ -16,7 +16,7 @@ import NumberInput from "./components/NumberInput";
 import "./styles.css";
 import OptionsGroup from "./components/OptionsGroup";
 import Option from "./components/Option";
-import { FiCode, FiAirplay } from "react-icons/fi";
+import { FiCode, FiArchive } from "react-icons/fi";
 
 const width = 20;
 const offset = 20;
@@ -81,8 +81,6 @@ function App() {
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette);
 
-  const Rectangle = rectangle(color, false);
-
   return (
     <Container>
       <h1>Palette2Figma</h1>
@@ -93,29 +91,29 @@ function App() {
 
       <OptionsGroup>
         <Option icon={<FiCode />} label={"Base Color:"}>
-          <Picker onChange={setColor} />
+          <Picker onChange={setColor} value={color} />
+        </Option>
+
+        <Option icon={<FiArchive />} label={"Contrast:"}>
+          <Slider
+            value={contrast}
+            onChange={(e, newValue) => {
+              setContrast(newValue);
+            }}
+            aria-labelledby="contrast-slider"
+            step={0.05}
+            min={0.05}
+            max={0.7}
+          />
         </Option>
 
         <Option icon={<FiCode />} label={"Variations:"}>
           <NumberInput
             min={2}
             max={9}
+            step={1}
             value={variations}
-            defaultValue={variations}
-            onChange={num => setVariations(num)}
-          />
-        </Option>
-
-        <Option icon={<FiCode />} label={"Contrast:"}>
-          <Slider
-            value={contrast}
-            onChange={(e, newValue) => {
-              setContrast(newValue);
-            }}
-            aria-labelledby="continuous-slider"
-            step={0.05}
-            min={0.05}
-            max={0.7}
+            onChange={setVariations}
           />
         </Option>
       </OptionsGroup>

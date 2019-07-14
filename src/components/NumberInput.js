@@ -20,9 +20,11 @@ const Minus = styled.button`
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background-color: ${colors.secondary};
+  background-color: ${props =>
+    props.disabled ? colors.primary : colors.secondary};
   font-size: 16px;
   font-weight: bold;
+  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
 `;
 
 const Add = styled.button`
@@ -30,9 +32,11 @@ const Add = styled.button`
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background-color: ${colors.secondary};
+  background-color: ${props =>
+    props.disabled ? colors.primary : colors.secondary};
   font-size: 16px;
   font-weight: bold;
+  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
 `;
 
 const Row = styled.div`
@@ -49,21 +53,34 @@ const Row = styled.div`
   }
 `;
 
-const NumberInput = (onChange, defaultValue, min, max) => {
-  const [value, setValue] = useState(4);
-  const reduce = () => setValue(value - 1);
-  const add = () => setValue(value + 1);
+const NumberInput = ({ onChange, value, min, max }) => {
+  const [number, setNumber] = useState(value || 4);
 
-  const disableMinus = value === min;
-  const disableAdd = value === max;
+  const disableMinus = number === min;
+  const disableAdd = number === max;
+
+  const reduce = () => {
+    if (!disableMinus) setNumber(number - 1);
+  };
+  const add = () => {
+    if (!disableAdd) setNumber(number + 1);
+  };
+
+  const handleChange = e => {
+    const number = e.target.value;
+    setNumber(number);
+    onChange(number);
+  };
+  console.log(value);
+  console.log(number);
 
   return (
     <Row>
-      <Input value={value} onChange={e => setValue(e.target.value)} />
-      <Minus onClick={reduce} isDisabled={disableMinus}>
+      <Input value={number} onChange={handleChange} />
+      <Minus onClick={reduce} disabled={disableMinus}>
         -
       </Minus>
-      <Add onClick={add} isDisabled={disableAdd}>
+      <Add onClick={add} disabled={disableAdd}>
         +
       </Add>
     </Row>
