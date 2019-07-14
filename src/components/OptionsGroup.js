@@ -3,9 +3,9 @@ import styled from "styled-components";
 const OptionsGroup = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-
+  min-width: 80vw;
   padding: 2rem;
   border-radius: 16px;
 

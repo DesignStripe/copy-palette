@@ -7,11 +7,11 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  svg {
+  > svg {
     margin-right: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    size: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    size: 1.5rem;
     stroke: white;
   }
 

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import reshader from "reshader";
-import NumericInput from "react-numeric-input";
-import { SketchPicker } from "react-color";
 
 import Button from "@material-ui/core/Button";
 import Slider from "@material-ui/core/Slider";
@@ -16,10 +14,12 @@ import NumberInput from "./components/NumberInput";
 import "./styles.css";
 import OptionsGroup from "./components/OptionsGroup";
 import Option from "./components/Option";
-import { FiCode, FiArchive } from "react-icons/fi";
+import PaletteIcon from "./components/Icons/PaletteIcon";
+import ContrastIcon from "./components/Icons/ContrastIcon";
+import VariationsIcon from "./components/Icons/VariationsIcon";
 
-const width = 20;
-const offset = 20;
+const width = 40;
+const gutter = 16;
 
 const Container = styled.div`
   padding: 1rem;
@@ -39,26 +39,35 @@ const Container = styled.div`
 `;
 
 function rectangle(color, isBaseColor) {
-  const size = isBaseColor ? 40 : width;
+  const size = isBaseColor ? 64 : width;
   return (
-    <svg x="0" y={offset} width={size} height={size} style={{ margin: "1rem" }}>
-      <rect width={size} height={size} style={{ fill: color }} />
+    <svg x="0" y={gutter} width={size} height={size} style={{ margin: "1rem" }}>
+      <rect rx="8" width={size} height={size} style={{ fill: color }} />
     </svg>
   );
 }
 
 function getSvg(colors) {
+  const length = colors.length;
+
   return `
   <svg
-    height="${width}"
-    width="${colors.length * (width + offset)}"
+    height="${64}"
+    width="${(length - 1) * (width + gutter) + 64}"
   >
 ${colors
-  .map(
-    (color, index) =>
-      `<rect width="${width}" height="${width}" y="0" x="${index *
-        (offset + width)}" style="fill: ${color}" />`
-  )
+  .map((color, index) => {
+    const medium = (length - 1) / 2;
+    const isBase = index === medium;
+
+    const size = isBase ? 64 : width;
+
+    const baseOffset = index > medium ? 24 : 0;
+    const x = index * (gutter + width) + baseOffset;
+    const y = isBase ? 0 : 12;
+
+    return `<rect rx="8" width="${size}" height="${size}" x="${x}" y="${y}" style="fill: ${color}" />`;
+  })
   .join(" \n")}
 </svg>
   `;
@@ -76,7 +85,7 @@ function App() {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState("#ff0000");
   const [variations, setVariations] = useState(4);
-  const [contrast, setContrast] = useState(0.2);
+  const [contrast, setContrast] = useState(0.15);
 
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette);
@@ -90,45 +99,35 @@ function App() {
       </p>
 
       <OptionsGroup>
-        <Option icon={<FiCode />} label={"Base Color:"}>
+        <Option icon={<PaletteIcon />} label={"Base Color:"}>
           <Picker onChange={setColor} value={color} />
         </Option>
 
-        <Option icon={<FiArchive />} label={"Contrast:"}>
-          <Slider
-            value={contrast}
-            onChange={(e, newValue) => {
-              setContrast(newValue);
-            }}
-            aria-labelledby="contrast-slider"
-            step={0.05}
-            min={0.05}
-            max={0.7}
-          />
+        <Option icon={<ContrastIcon />} label={"Contrast:"}>
+          <div style={{ minWidth: "64px" }}>
+            <Slider
+              value={contrast}
+              onChange={(e, newValue) => {
+                setContrast(newValue);
+              }}
+              aria-labelledby="contrast-slider"
+              step={0.01}
+              min={0.1}
+              max={0.2}
+            />
+          </div>
         </Option>
 
-        <Option icon={<FiCode />} label={"Variations:"}>
+        <Option icon={<VariationsIcon />} label={"Variations:"}>
           <NumberInput
-            min={2}
-            max={9}
+            min={1}
+            max={5}
             step={1}
             value={variations}
             onChange={setVariations}
           />
         </Option>
       </OptionsGroup>
-
-      {/* <Picker onClick={() => setDisplayColorPicker(!displayColorPicker)} />
-
-      {displayColorPicker && (
-        <SketchPicker color={color} onChange={color => setColor(color.hex)} />
-      )} */}
-      {/* <NumericInput
-        min={2}
-        max={9}
-        value={variations}
-        onChange={num => setVariations(num)}
-      /> */}
 
       <div className="preview row">
         {palette.map((color, index) => {

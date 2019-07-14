@@ -53,30 +53,29 @@ const Row = styled.div`
   }
 `;
 
-const NumberInput = ({ onChange, value, min, max }) => {
+const NumberInput = ({ onChange, value, min, max, step }) => {
   const [number, setNumber] = useState(value || 4);
-
   const disableMinus = number === min;
   const disableAdd = number === max;
 
   const reduce = () => {
-    if (!disableMinus) setNumber(number - 1);
+    if (!disableMinus) {
+      const newNumber = number - step;
+      setNumber(newNumber);
+      onChange(newNumber);
+    }
   };
   const add = () => {
-    if (!disableAdd) setNumber(number + 1);
+    if (!disableAdd) {
+      const newNumber = number + step;
+      setNumber(newNumber);
+      onChange(newNumber);
+    }
   };
-
-  const handleChange = e => {
-    const number = e.target.value;
-    setNumber(number);
-    onChange(number);
-  };
-  console.log(value);
-  console.log(number);
 
   return (
     <Row>
-      <Input value={number} onChange={handleChange} />
+      <Input value={number} />
       <Minus onClick={reduce} disabled={disableMinus}>
         -
       </Minus>

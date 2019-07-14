@@ -29,7 +29,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background-color: #064acb;
 }
 
@@ -43,7 +42,9 @@
 .preview {
   background-color: white;
   border-radius: 16px;
-  padding: 1rem;
+  padding: 2rem;
+  min-width: 80vw;
+  height: 40px;
 }
 
 .cta {
