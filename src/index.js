@@ -18,8 +18,25 @@ import PaletteIcon from "./components/Icons/PaletteIcon";
 import ContrastIcon from "./components/Icons/ContrastIcon";
 import VariationsIcon from "./components/Icons/VariationsIcon";
 
-const width = 40;
-const gutter = 16;
+const SIZE = 40;
+const GUTTER = 16;
+const BASE_SIZE = 64;
+
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    margin-bottom: 16px;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  color: #fff;
+`;
 
 const Container = styled.div`
   padding: 1rem;
@@ -39,10 +56,10 @@ const Container = styled.div`
 `;
 
 function rectangle(color, isBaseColor) {
-  const size = isBaseColor ? 64 : width;
+  const size = isBaseColor ? 64 : SIZE;
   return (
-    <svg x="0" y={gutter} width={size} height={size} style={{ margin: "1rem" }}>
-      <rect rx="8" width={size} height={size} style={{ fill: color }} />
+    <svg x="0" y={GUTTER} width={size} height={size} style={{ margin: "1rem" }}>
+      <rect rx="8" width={size} height={size} fill={color} />
     </svg>
   );
 }
@@ -52,21 +69,21 @@ function getSvg(colors) {
 
   return `
   <svg
-    height="${64}"
-    width="${(length - 1) * (width + gutter) + 64}"
+    width="${(length - 1) * (SIZE + GUTTER) + 64}"
+    height="${BASE_SIZE}"
   >
 ${colors
   .map((color, index) => {
     const medium = (length - 1) / 2;
     const isBase = index === medium;
 
-    const size = isBase ? 64 : width;
+    const size = isBase ? BASE_SIZE : SIZE;
 
-    const baseOffset = index > medium ? 24 : 0;
-    const x = index * (gutter + width) + baseOffset;
-    const y = isBase ? 0 : 12;
+    const baseOffset = index > medium ? BASE_SIZE - SIZE : 0;
+    const x = index * (GUTTER + SIZE) + baseOffset;
+    const y = isBase ? 0 : (BASE_SIZE - SIZE) / 2;
 
-    return `<rect rx="8" width="${size}" height="${size}" x="${x}" y="${y}" style="fill: ${color}" />`;
+    return `<rect rx="8" width="${size}" height="${size}" x="${x}" y="${y}" fill="${color}" />`;
   })
   .join(" \n")}
 </svg>
@@ -82,7 +99,6 @@ function createPalette(color, variations, contrast) {
 }
 
 function App() {
-  const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState("#ff0000");
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.15);
@@ -92,11 +108,13 @@ function App() {
 
   return (
     <Container>
-      <h1>Palette2Figma</h1>
-      <p>
-        Create your palette and use it in figma by just using{" "}
-        <Badge>CTRL-C</Badge> and <Badge>CTRL-V</Badge>
-      </p>
+      <Header>
+        <h1>Palette2Figma</h1>
+        <p>
+          Create your palette and use it in figma by just using{" "}
+          <Badge>CTRL-C</Badge> and <Badge>CTRL-V</Badge>
+        </p>
+      </Header>
 
       <OptionsGroup>
         <Option icon={<PaletteIcon />} label={"Base Color:"}>
@@ -114,6 +132,7 @@ function App() {
               step={0.01}
               min={0.1}
               max={0.2}
+              style={{ color: "white" }}
             />
           </div>
         </Option>

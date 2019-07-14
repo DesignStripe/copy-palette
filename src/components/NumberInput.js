@@ -22,6 +22,8 @@ const Minus = styled.button`
   border-radius: 8px;
   background-color: ${props =>
     props.disabled ? colors.primary : colors.secondary};
+  color: ${props => (props.disabled ? colors.secondary : "#fff")};
+
   font-size: 16px;
   font-weight: bold;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
@@ -34,6 +36,7 @@ const Add = styled.button`
   border-radius: 8px;
   background-color: ${props =>
     props.disabled ? colors.primary : colors.secondary};
+  color: ${props => (props.disabled ? colors.secondary : "#fff")};
   font-size: 16px;
   font-weight: bold;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
