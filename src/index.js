@@ -1,28 +1,21 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-
 import reshader from "reshader";
-
-import Button from "@material-ui/core/Button";
-import Slider from "@material-ui/core/Slider";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import styled from "styled-components";
 
+import Button from "@material-ui/core/Button";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Tooltip } from "@material-ui/core";
+
 import Badge from "./components/Badge";
-import Picker from "./components/Picker";
-import NumberInput from "./components/NumberInput";
-import "./styles.css";
 import OptionsGroup from "./components/OptionsGroup";
-import Option from "./components/Option";
-import PaletteIcon from "./components/Icons/PaletteIcon";
-import ContrastIcon from "./components/Icons/ContrastIcon";
-import VariationsIcon from "./components/Icons/VariationsIcon";
+import "./styles.css";
 
 const SIZE = 40;
 const GUTTER = 16;
 const BASE_SIZE = 64;
 
-const Header = styled.div`
+const Header = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,6 +38,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  box-sizing: border-box;
 
   & > *:first-child {
     margin-bottom: 6rem;
@@ -63,9 +57,19 @@ const Container = styled.div`
 function rectangle(color, isBaseColor) {
   const size = isBaseColor ? 64 : SIZE;
   return (
-    <svg x="0" y={GUTTER} width={size} height={size} style={{ margin: "1rem" }}>
-      <rect rx="8" width={size} height={size} fill={color} />
-    </svg>
+    <CopyToClipboard text={`${color}`}>
+      <Tooltip title={`${color}`}>
+        <svg
+          x="0"
+          y={GUTTER}
+          width={size}
+          height={size}
+          style={{ margin: "1rem" }}
+        >
+          <rect rx="8" width={size} height={size} fill={color} />
+        </svg>
+      </Tooltip>
+    </CopyToClipboard>
   );
 }
 
@@ -121,37 +125,14 @@ function App() {
         </p>
       </Header>
 
-      <OptionsGroup>
-        <Option icon={<PaletteIcon />} label={"Base Color:"}>
-          <Picker onChange={setColor} value={color} />
-        </Option>
-
-        <Option icon={<ContrastIcon />} label={"Contrast:"}>
-          <div style={{ minWidth: "64px" }}>
-            <Slider
-              value={contrast}
-              onChange={(e, newValue) => {
-                setContrast(newValue);
-              }}
-              aria-labelledby="contrast-slider"
-              step={0.01}
-              min={0.1}
-              max={0.2}
-              style={{ color: "white" }}
-            />
-          </div>
-        </Option>
-
-        <Option icon={<VariationsIcon />} label={"Variations:"}>
-          <NumberInput
-            min={1}
-            max={5}
-            step={1}
-            value={variations}
-            onChange={setVariations}
-          />
-        </Option>
-      </OptionsGroup>
+      <OptionsGroup
+        setColor={setColor}
+        color={color}
+        contrast={contrast}
+        setContrast={setContrast}
+        variations={variations}
+        setVariation={setVariations}
+      />
 
       <div className="preview row">
         {palette.map((color, index) => {
