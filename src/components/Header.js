@@ -23,7 +23,7 @@ const Header = ({}) => {
       <h1>Palette2Figma</h1>
       <p>
         Create your palette and use it in figma by just using{" "}
-        <Badge>CTRL-C</Badge> and <Badge>CTRL-V</Badge>
+        <Badge>COPY</Badge> and <Badge>PASTE</Badge>
       </p>
     </Container>
   );
