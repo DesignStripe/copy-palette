@@ -29,6 +29,7 @@
   justify-content: center;
   align-items: center;
   background-color: #064acb;
+  min-height: 100vh;
 }
 
 .options {
@@ -41,7 +42,7 @@
 .preview {
   background-color: #f5f5f5;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 4rem 2rem;
   min-width: 80vw;
   height: 40px;
 }
