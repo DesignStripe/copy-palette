@@ -51,8 +51,8 @@ const OptionsGroup = ({
           }}
           aria-labelledby="contrast-slider"
           step={0.01}
-          min={0.1}
-          max={0.2}
+          min={0.07}
+          max={0.17}
           style={{ color: "white" }}
         />
       </div>
