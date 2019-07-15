@@ -5,15 +5,13 @@ import styled from "styled-components";
 
 import Button from "@material-ui/core/Button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { Tooltip } from "@material-ui/core";
 
 import Badge from "./components/Badge";
 import OptionsGroup from "./components/OptionsGroup";
+import Preview from "./components/Preview";
 import "./styles.css";
 
-const SIZE = 40;
-const GUTTER = 16;
-const BASE_SIZE = 64;
+import { SIZE, GUTTER, BASE_SIZE } from "./constants";
 
 const Header = styled.header`
   display: flex;
@@ -53,25 +51,6 @@ const Container = styled.div`
 
   background-color: #064acb;
 `;
-
-function rectangle(color, isBaseColor) {
-  const size = isBaseColor ? 64 : SIZE;
-  return (
-    <CopyToClipboard text={`${color}`}>
-      <Tooltip title={`${color}`}>
-        <svg
-          x="0"
-          y={GUTTER}
-          width={size}
-          height={size}
-          style={{ margin: "1rem" }}
-        >
-          <rect rx="8" width={size} height={size} fill={color} />
-        </svg>
-      </Tooltip>
-    </CopyToClipboard>
-  );
-}
 
 function getSvg(colors) {
   const length = colors.length;
@@ -134,12 +113,7 @@ function App() {
         setVariation={setVariations}
       />
 
-      <div className="preview row">
-        {palette.map((color, index) => {
-          const isBaseColor = index === variations;
-          return rectangle(color, isBaseColor);
-        })}
-      </div>
+      <Preview palette={palette} variations={variations} />
 
       <CopyToClipboard
         text={svgPalette}
