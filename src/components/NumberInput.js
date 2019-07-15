@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import theme from "../theme";
+import theme from "../utils/theme";
 
 const { colors } = theme;
 
