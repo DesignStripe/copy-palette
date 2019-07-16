@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const Layout = styled.div`
   padding: 1rem;
@@ -20,7 +21,7 @@ const Layout = styled.div`
     margin-bottom: 0;
   }
 
-  background-color: #064acb;
+  background-color: ${theme.colors.primary};
 `;
 
 export default Layout;

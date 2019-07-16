@@ -26,4 +26,24 @@ function getSvg(colors) {
   `;
 }
 
+function getSvg2(colors) {
+  const length = colors.length;
+
+  return `
+    <svg
+      width="${length * SIZE}"
+      height="${SIZE}"
+    >
+  ${colors
+    .map((color, index) => {
+      const x = index * SIZE;
+      const y = 0;
+
+      return `<rect width="${SIZE}" height="${SIZE}" x="${x}" y="${y}" fill="${color}" />`;
+    })
+    .join(" \n")}
+  </svg>
+  `;
+}
+
 export default getSvg;

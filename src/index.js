@@ -42,7 +42,11 @@ function App() {
         setVariations={setVariations}
       />
 
-      <Preview palette={palette} variations={variations} />
+      <Preview
+        palette={palette}
+        variations={variations}
+        svgPalette={svgPalette}
+      />
 
       <CopyButton text={svgPalette} />
     </Layout>

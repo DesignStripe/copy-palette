@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import theme from "../utils/theme";
 
 const Badge = styled.span`
-  background-color: #f3a953;
-  color: black;
+  background-color: ${theme.colors.tertiary};
+  color: ${theme.colors.dark};
   padding: 4px 6px;
   border-radius: 8px;
 

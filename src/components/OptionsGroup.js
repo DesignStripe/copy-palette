@@ -9,6 +9,7 @@ import Option from "./Option";
 import PaletteIcon from "./Icons/PaletteIcon";
 import ContrastIcon from "./Icons/ContrastIcon";
 import VariationsIcon from "./Icons/VariationsIcon";
+import theme from "../utils/theme";
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const Container = styled.div`
   padding: 2rem;
   border-radius: 16px;
 
-  background-color: #063285;
+  background-color: ${theme.colors.primaryDark};
 
   & > * {
     margin-right: 32px;

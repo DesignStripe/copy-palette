@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+
 import Badge from "./Badge";
+import theme from "../utils/theme";
 
 const Container = styled.header`
   display: flex;
@@ -15,7 +17,7 @@ const Container = styled.header`
     margin-bottom: 0;
   }
 
-  color: #fff;
+  color: ${theme.colors.light};
 `;
 const Header = ({}) => {
   return (

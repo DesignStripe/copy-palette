@@ -8,7 +8,7 @@ const Input = styled.input`
   padding: 12px 21px;
   width: 16px;
   border: none;
-  background-color: #fff;
+  background-color: ${colors.light};
   color: ${colors.primary};
   border-radius: 8px;
   font-size: 14px;
@@ -21,8 +21,9 @@ const Minus = styled.button`
   height: 40px;
   border-radius: 8px;
   background-color: ${props =>
-    props.disabled ? colors.primary : colors.secondary};
-  color: ${props => (props.disabled ? colors.secondary : "#fff")};
+    props.disabled ? colors.primary : colors.primaryLight};
+  color: ${props =>
+    props.disabled ? colors.primaryLight : colors.primary.light};
 
   font-size: 16px;
   font-weight: bold;
@@ -35,8 +36,9 @@ const Add = styled.button`
   height: 40px;
   border-radius: 8px;
   background-color: ${props =>
-    props.disabled ? colors.primary : colors.secondary};
-  color: ${props => (props.disabled ? colors.secondary : "#fff")};
+    props.disabled ? colors.primary : colors.primaryLight};
+  color: ${props =>
+    props.disabled ? colors.primaryLight : colors.primary.light};
   font-size: 16px;
   font-weight: bold;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
