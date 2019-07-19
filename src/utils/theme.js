@@ -1,60 +1,76 @@
-export default {
-  dark: {
-    colors: {
-      primary: {
-        100: "#366ED8",
-        200: "#064acb",
-        300: "#083284"
-      },
-      secondary: "#083284",
+const colorPalette = {
+  primary: {
+    100: "#366ED8",
+    200: "#064acb",
+    300: "#083284"
+  },
+  secondary: "#083284",
+  tertiary: "#F3A953",
+  neutrals: {
+    100: "#fff",
+    200: "#f5f5f5",
+    300: "#C9C9C9",
+    400: "#555",
+    500: "#212121"
+  }
+};
 
-      tertiary: "#F3A953",
+const theme = {
+  dark: {
+    ...colorPalette,
+
+    colors: {
+      bg: colorPalette.primary[200],
       text: {
-        default: "#fff",
-        disabled: "#064acb"
+        default: colorPalette.neutrals[100],
+        disabled: colorPalette.primary[200]
       },
       button: {
-        disabled: "#366ED8",
-        default: "#366ED8"
+        disabled: colorPalette.primary[100],
+        default: colorPalette.primary[100]
       },
       badge: {
-        bg: "#F3A953",
-        text: "#111"
+        bg: colorPalette.tertiary,
+        text: colorPalette.neutrals[500]
       },
       cta: {
-        bg: "#F3A953",
-        text: "#111"
+        bg: colorPalette.tertiary,
+        text: colorPalette.neutrals[500]
       },
-      input: { bg: "#fff", text: "#064acb" }
+      input: {
+        bg: colorPalette.neutrals[100],
+        text: colorPalette.primary[200]
+      }
     }
   },
   light: {
     colors: {
-      primary: {
-        100: "#366ED8",
-        200: "#fff",
-        300: "#083284"
-      },
-      secondary: "#D7D7F8",
-      tertiary: "#F3A953",
+      ...colorPalette,
+      background: "#D7D7F8",
+      surface: "",
       text: {
-        default: "#083284",
-        disabled: "#fff"
+        default: colorPalette.primary[300],
+        disabled: colorPalette.neutrals[100]
       },
       button: {
-        disabled: "#366ED8",
-        default: "#366ED8"
+        disabled: colorPalette.primary[100],
+        default: colorPalette.primary[100]
       },
       badge: {
-        bg: "#F3A953",
-        text: "#111"
+        bg: colorPalette.tertiary,
+        text: colorPalette.neutrals[500]
       },
       cta: {
-        bg: "#F3A953",
-        text: "#111"
+        bg: colorPalette.tertiary,
+        text: colorPalette.neutrals[500]
       },
-      input: { bg: "#fff", text: "#fff" }
+      input: {
+        bg: colorPalette.neutrals[100],
+        text: colorPalette.neutrals[100]
+      }
     }
   },
-  defaultColor: "#F3A953"
+  defaultColor: colorPalette.tertiary
 };
+
+export default theme;

@@ -20,7 +20,7 @@ const Layout = styled.div`
     margin-bottom: 0;
   }
 
-  background-color: ${props => props.theme.colors.primary[200]};
+  background-color: ${props => props.theme.colors.bg};
 `;
 
 export default Layout;
