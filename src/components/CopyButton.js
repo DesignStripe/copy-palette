@@ -7,8 +7,8 @@ import { FiCopy } from "react-icons/fi";
 
 const Button = styled(MUButton)`
   && {
-    background-color: ${props => props.theme.colors.tertiary} !important;
-    color: ${props => props.theme.colors.dark} !important;
+    background-color: ${props => props.theme.colors.cta.bg} !important;
+    color: ${props => props.theme.colors.cta.text} !important;
 
     text-transform: capitalize !important;
     font-weight: bold !important;

@@ -23,7 +23,7 @@ function App() {
   const [color, setColor] = useState(theme.defaultColor);
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.1);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette);

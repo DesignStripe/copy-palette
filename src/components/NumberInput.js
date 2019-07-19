@@ -5,8 +5,8 @@ const Input = styled.input`
   padding: 12px 21px;
   width: 16px;
   border: none;
-  background-color: ${props => props.theme.colors.light};
-  color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.input.bg};
+  color: ${props => props.theme.colors.input.text};
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
@@ -19,12 +19,12 @@ const Minus = styled.button`
   border-radius: 8px;
   background-color: ${props =>
     props.disabled
-      ? props.theme.colors.primary
-      : props.theme.colors.primaryLight};
+      ? props.theme.colors.button.disabled
+      : props.theme.colors.button.default};
   color: ${props =>
     props.disabled
-      ? props.theme.colors.primaryLight
-      : props.theme.colors.light};
+      ? props.theme.colors.text.disabled
+      : props.theme.colors.text.default};
 
   font-size: 16px;
   font-weight: bold;
@@ -38,12 +38,12 @@ const Add = styled.button`
   border-radius: 8px;
   background-color: ${props =>
     props.disabled
-      ? props.theme.colors.primary
-      : props.theme.colors.primaryLight};
+      ? props.theme.colors.button.disabled
+      : props.theme.colors.button.default};
   color: ${props =>
     props.disabled
-      ? props.theme.colors.primaryLight
-      : props.theme.colors.light};
+      ? props.theme.colors.text.disabled
+      : props.theme.colors.text.default};
   font-size: 16px;
   font-weight: bold;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};

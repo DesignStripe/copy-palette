@@ -8,8 +8,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${props => props.theme.colors.primary};
-  border: dashed 4px ${props => props.theme.colors.primaryDark};
+  background-color: ${props => props.theme.colors.primary[200]};
+  border: dashed 4px ${props => props.theme.colors.primary[300]};
   border-radius: 16px;
   padding: 4rem 2rem;
   min-width: 80vw;

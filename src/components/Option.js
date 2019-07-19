@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -12,7 +12,7 @@ const Container = styled.div`
     width: 1.5rem;
     height: 1.5rem;
     size: 1.5rem;
-    stroke: ${props => props.theme.colors.light};
+    stroke: ${props => props.theme.colors.text.default};
   }
 
   p {
@@ -20,7 +20,7 @@ const Container = styled.div`
   }
 
   font-size: 1rem;
-  color: ${props => props.theme.colors.light};
+  color: ${props => props.theme.colors.text.default};
 `;
 
 const Option = ({ icon, label, children }) => {
