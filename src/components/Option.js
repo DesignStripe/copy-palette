@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import theme from "../utils/theme";
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ const Container = styled.div`
     width: 1.5rem;
     height: 1.5rem;
     size: 1.5rem;
-    stroke: ${theme.colors.light};
+    stroke: ${props => props.theme.colors.light};
   }
 
   p {
@@ -21,7 +20,7 @@ const Container = styled.div`
   }
 
   font-size: 1rem;
-  color: ${theme.colors.light};
+  color: ${props => props.theme.colors.light};
 `;
 
 const Option = ({ icon, label, children }) => {

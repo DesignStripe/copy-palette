@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Badge from "./Badge";
-import theme from "../utils/theme";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Container = styled.header`
   display: flex;
@@ -17,9 +17,10 @@ const Container = styled.header`
     margin-bottom: 0;
   }
 
-  color: ${theme.colors.light};
+  color: ${props => props.theme.colors.light};
 `;
-const Header = ({}) => {
+
+const Header = ({ handleTheme }) => {
   return (
     <Container>
       <h1>Palette2Figma</h1>
@@ -27,6 +28,8 @@ const Header = ({}) => {
         Create your palette and use it in figma by just using{" "}
         <Badge>COPY</Badge> and <Badge>PASTE</Badge>
       </p>
+
+      <ThemeSwitch onChange={handleTheme} />
     </Container>
   );
 };

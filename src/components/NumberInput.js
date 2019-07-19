@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import theme from "../utils/theme";
-
-const { colors } = theme;
 
 const Input = styled.input`
   padding: 12px 21px;
   width: 16px;
   border: none;
-  background-color: ${colors.light};
-  color: ${colors.primary};
+  background-color: ${props => props.theme.colors.light};
+  color: ${props => props.theme.colors.primary};
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
@@ -21,8 +18,13 @@ const Minus = styled.button`
   height: 40px;
   border-radius: 8px;
   background-color: ${props =>
-    props.disabled ? colors.primary : colors.primaryLight};
-  color: ${props => (props.disabled ? colors.primaryLight : colors.light)};
+    props.disabled
+      ? props.theme.colors.primary
+      : props.theme.colors.primaryLight};
+  color: ${props =>
+    props.disabled
+      ? props.theme.colors.primaryLight
+      : props.theme.colors.light};
 
   font-size: 16px;
   font-weight: bold;
@@ -35,8 +37,13 @@ const Add = styled.button`
   height: 40px;
   border-radius: 8px;
   background-color: ${props =>
-    props.disabled ? colors.primary : colors.primaryLight};
-  color: ${props => (props.disabled ? colors.primaryLight : colors.light)};
+    props.disabled
+      ? props.theme.colors.primary
+      : props.theme.colors.primaryLight};
+  color: ${props =>
+    props.disabled
+      ? props.theme.colors.primaryLight
+      : props.theme.colors.light};
   font-size: 16px;
   font-weight: bold;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};

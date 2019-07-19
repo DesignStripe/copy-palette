@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import CopyButton from "./components/CopyButton";
 import Layout from "./components/Layout";
@@ -20,36 +20,39 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  const [color, setColor] = useState(theme.colors.tertiary);
+  const [color, setColor] = useState(theme.defaultColor);
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.1);
+  const [isDark, setIsDark] = useState(false);
 
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette);
 
   return (
-    <Layout>
-      <GlobalStyle />
+    <ThemeProvider theme={isDark ? theme.dark : theme.light}>
+      <Layout>
+        <GlobalStyle />
 
-      <Header />
+        <Header handleTheme={setIsDark} />
 
-      <OptionsGroup
-        setColor={setColor}
-        color={color}
-        contrast={contrast}
-        setContrast={setContrast}
-        variations={variations}
-        setVariations={setVariations}
-      />
+        <OptionsGroup
+          setColor={setColor}
+          color={color}
+          contrast={contrast}
+          setContrast={setContrast}
+          variations={variations}
+          setVariations={setVariations}
+        />
 
-      <Preview
-        palette={palette}
-        variations={variations}
-        svgPalette={svgPalette}
-      />
+        <Preview
+          palette={palette}
+          variations={variations}
+          svgPalette={svgPalette}
+        />
 
-      <CopyButton text={svgPalette} />
-    </Layout>
+        <CopyButton text={svgPalette} />
+      </Layout>
+    </ThemeProvider>
   );
 }
 

@@ -15,6 +15,7 @@
     "react-scripts": "3.0.1",
     "reshader": "1.0.0",
     "styled-components": "4.3.2",
+    "use-dark-mode": "2.3.1",
     "values.js": "1.0.3"
   },
   "devDependencies": {
