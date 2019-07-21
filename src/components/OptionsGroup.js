@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Slider } from "@material-ui/core";
-
 import Picker from "./Picker";
+import Slider from "./Slider";
 import NumberInput from "./NumberInput";
 import Option from "./Option";
 import PaletteIcon from "./Icons/PaletteIcon";
@@ -43,19 +42,7 @@ const OptionsGroup = ({
     </Option>
 
     <Option icon={<ContrastIcon />} label={"Contrast:"}>
-      <div style={{ minWidth: "64px" }}>
-        <Slider
-          value={contrast}
-          onChange={(e, newValue) => {
-            setContrast(newValue);
-          }}
-          aria-labelledby="contrast-slider"
-          step={0.01}
-          min={0.07}
-          max={0.17}
-          style={{ color: "white" }}
-        />
-      </div>
+      <Slider value={contrast} onChange={setContrast} />
     </Option>
 
     <Option icon={<VariationsIcon />} label={"Variations:"}>

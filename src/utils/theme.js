@@ -45,7 +45,9 @@ const theme = {
       input: {
         bg: colorPalette.neutrals[100],
         text: colorPalette.primary[200]
-      }
+      },
+      previewBorder: colorPalette.primary[300],
+      slider: colorPalette.neutrals[100]
     }
   },
   light: {
@@ -63,7 +65,7 @@ const theme = {
       },
       button: {
         disabled: colorPalette.primary[100],
-        default: colorPalette.primary[200],
+        default: colorPalette.primary[300],
         text: colorPalette.neutrals[100],
         textDisabled: colorPalette.primary[300]
       },
@@ -79,7 +81,8 @@ const theme = {
         bg: colorPalette.neutrals[200],
         text: colorPalette.primary[300]
       },
-      previewBorder: colorPalette.primary[300]
+      previewBorder: colorPalette.primary[300],
+      slider: colorPalette.primary[300]
     }
   },
   defaultColor: colorPalette.tertiary
