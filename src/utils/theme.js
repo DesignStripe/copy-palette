@@ -17,25 +17,30 @@ const colorPalette = {
 
 const theme = {
   dark: {
-    ...colorPalette,
-
     colors: {
-      bg: colorPalette.primary[200],
+      ...colorPalette,
+      background: colorPalette.primary[200],
       text: {
         default: colorPalette.neutrals[100],
         disabled: colorPalette.primary[200]
       },
+      options: {
+        background: colorPalette.primary[300],
+        text: colorPalette.neutrals[100]
+      },
       button: {
-        disabled: colorPalette.primary[100],
-        default: colorPalette.primary[100]
+        disabled: colorPalette.primary[200],
+        default: colorPalette.primary[100],
+        text: colorPalette.neutrals[100],
+        textDisabled: colorPalette.primary[300]
       },
       badge: {
         bg: colorPalette.tertiary,
         text: colorPalette.neutrals[500]
       },
       cta: {
-        bg: colorPalette.tertiary,
-        text: colorPalette.neutrals[500]
+        bg: colorPalette.neutrals[100],
+        text: colorPalette.primary[300]
       },
       input: {
         bg: colorPalette.neutrals[100],
@@ -46,28 +51,35 @@ const theme = {
   light: {
     colors: {
       ...colorPalette,
-      background: "#D7D7F8",
+      background: colorPalette.neutrals[200],
       surface: "",
       text: {
         default: colorPalette.primary[300],
         disabled: colorPalette.neutrals[100]
       },
+      options: {
+        background: colorPalette.neutrals[100],
+        text: colorPalette.primary[300]
+      },
       button: {
         disabled: colorPalette.primary[100],
-        default: colorPalette.primary[100]
+        default: colorPalette.primary[200],
+        text: colorPalette.neutrals[100],
+        textDisabled: colorPalette.primary[300]
       },
       badge: {
         bg: colorPalette.tertiary,
         text: colorPalette.neutrals[500]
       },
       cta: {
-        bg: colorPalette.tertiary,
-        text: colorPalette.neutrals[500]
+        bg: colorPalette.primary[300],
+        text: colorPalette.neutrals[100]
       },
       input: {
-        bg: colorPalette.neutrals[100],
-        text: colorPalette.neutrals[100]
-      }
+        bg: colorPalette.neutrals[200],
+        text: colorPalette.primary[300]
+      },
+      previewBorder: colorPalette.primary[300]
     }
   },
   defaultColor: colorPalette.tertiary

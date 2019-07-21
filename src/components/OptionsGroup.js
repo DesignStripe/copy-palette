@@ -19,7 +19,7 @@ const Container = styled.div`
   padding: 2rem;
   border-radius: 16px;
 
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${props => props.theme.colors.options.background};
 
   & > * {
     margin-right: 32px;

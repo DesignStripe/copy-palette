@@ -23,8 +23,8 @@ const Minus = styled.button`
       : props.theme.colors.button.default};
   color: ${props =>
     props.disabled
-      ? props.theme.colors.text.disabled
-      : props.theme.colors.text.default};
+      ? props.theme.colors.button.textDisabled
+      : props.theme.colors.button.text};
 
   font-size: 16px;
   font-weight: bold;
@@ -42,8 +42,8 @@ const Add = styled.button`
       : props.theme.colors.button.default};
   color: ${props =>
     props.disabled
-      ? props.theme.colors.text.disabled
-      : props.theme.colors.text.default};
+      ? props.theme.colors.button.textDisabled
+      : props.theme.colors.button.text};
   font-size: 16px;
   font-weight: bold;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
