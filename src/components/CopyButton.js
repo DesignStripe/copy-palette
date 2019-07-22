@@ -24,7 +24,7 @@ const CopyButton = ({ text }) => {
     >
       <Button variant="contained" color="primary">
         {/* <FiCopy color={theme.colors.dark} style={{ marginRight: "0.5rem" }} /> */}
-        Copy Palette
+        Copy SVG Palette
       </Button>
     </CopyToClipboard>
   );

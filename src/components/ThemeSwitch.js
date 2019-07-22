@@ -37,7 +37,7 @@ const IOSSwitch = withStyles(theme => ({
       }
     },
     "&$focusVisible $thumb": {
-      color: "#064acb"
+      color: "#083284"
     }
   },
   thumb: {
@@ -46,7 +46,7 @@ const IOSSwitch = withStyles(theme => ({
   },
   track: {
     borderRadius: 1000,
-    backgroundColor: "#064acb",
+    backgroundColor: "#083284",
     opacity: 1,
     transition: theme.transitions.create(["background-color", "border"])
   },
