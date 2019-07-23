@@ -8,6 +8,7 @@ import Layout from "./components/Layout";
 import Header from "./components/Header";
 import OptionsGroup from "./components/OptionsGroup";
 import Preview from "./components/Preview";
+import Toast from "./components/Toast";
 
 import createPalette from "./utils/createPalette";
 import getSvg from "./utils/getSvg";
@@ -19,20 +20,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;  
   }
 `;
-
-const Toast = ({ appearance, children }) => (
-  <div
-    style={{
-      color: appearance === "error" ? "red" : "black",
-      backgroundColor: "#083284",
-      borderRadius: "4px",
-      color: "#fff",
-      padding: "0.5rem"
-    }}
-  >
-    {children}
-  </div>
-);
 
 function App() {
   const [color, setColor] = useState(theme.defaultColor);
