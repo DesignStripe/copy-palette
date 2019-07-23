@@ -20,6 +20,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Toast = ({ appearance, children }) => (
+  <div
+    style={{
+      color: appearance === "error" ? "red" : "black",
+      backgroundColor: "#212121",
+      borderRadius: "4px",
+      color: "#fff",
+      padding: "0.5rem"
+    }}
+  >
+    {children}
+  </div>
+);
+
 function App() {
   const [color, setColor] = useState(theme.defaultColor);
   const [variations, setVariations] = useState(4);
@@ -31,7 +45,11 @@ function App() {
 
   return (
     <ThemeProvider theme={isDark ? theme.dark : theme.light}>
-      <ToastProvider placement="bottom-center" autoDismissTimeout={1500}>
+      <ToastProvider
+        components={{ Toast }}
+        placement="bottom-center"
+        autoDismissTimeout={1500}
+      >
         <Layout>
           <GlobalStyle />
 
