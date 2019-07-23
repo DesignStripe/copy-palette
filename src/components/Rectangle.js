@@ -9,7 +9,7 @@ function Rectangle({ color, isBaseColor }) {
 
   return (
     <CopyToClipboard text={`${color}`}>
-      <Tooltip title={`${color}`}>
+      <Tooltip title={`Click to copy 💅`}>
         <svg
           x="0"
           y={GUTTER}
