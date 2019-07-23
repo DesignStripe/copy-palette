@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { ToastProvider } from "react-toast-notifications";
 
 import CopyButton from "./components/CopyButton";
 import Layout from "./components/Layout";
@@ -30,28 +31,30 @@ function App() {
 
   return (
     <ThemeProvider theme={isDark ? theme.dark : theme.light}>
-      <Layout>
-        <GlobalStyle />
+      <ToastProvider placement="bottom-center" autoDismissTimeout={1500}>
+        <Layout>
+          <GlobalStyle />
 
-        <Header handleTheme={setIsDark} />
+          <Header handleTheme={setIsDark} />
 
-        <OptionsGroup
-          setColor={setColor}
-          color={color}
-          contrast={contrast}
-          setContrast={setContrast}
-          variations={variations}
-          setVariations={setVariations}
-        />
+          <OptionsGroup
+            setColor={setColor}
+            color={color}
+            contrast={contrast}
+            setContrast={setContrast}
+            variations={variations}
+            setVariations={setVariations}
+          />
 
-        <Preview
-          palette={palette}
-          variations={variations}
-          svgPalette={svgPalette}
-        />
+          <Preview
+            palette={palette}
+            variations={variations}
+            svgPalette={svgPalette}
+          />
 
-        <CopyButton text={svgPalette} />
-      </Layout>
+          <CopyButton text={svgPalette} />
+        </Layout>
+      </ToastProvider>
     </ThemeProvider>
   );
 }
