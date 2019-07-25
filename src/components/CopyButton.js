@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { rgba } from "polished";
 
 import MUButton from "@material-ui/core/Button";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -12,7 +13,9 @@ const Button = styled(MUButton)`
 
     text-transform: capitalize !important;
     font-weight: bold !important;
-    padding: 12px 21px !important;
+    padding: 12px 24px !important;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px ${props => rgba(props.theme.colors.cta.bg, 0.4)};
   }
 `;
 
