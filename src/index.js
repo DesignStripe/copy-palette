@@ -42,6 +42,12 @@ function App() {
 
           <Header handleTheme={setIsDark} />
 
+          <Preview
+            palette={palette}
+            variations={variations}
+            svgPalette={svgPalette}
+          />
+
           <OptionsGroup
             setColor={setColor}
             color={color}
@@ -49,12 +55,6 @@ function App() {
             setContrast={setContrast}
             variations={variations}
             setVariations={setVariations}
-          />
-
-          <Preview
-            palette={palette}
-            variations={variations}
-            svgPalette={svgPalette}
           />
 
           <CopyButton text={svgPalette} />

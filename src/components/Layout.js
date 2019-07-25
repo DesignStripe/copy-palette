@@ -10,7 +10,7 @@ const Layout = styled.div`
   box-sizing: border-box;
 
   & > *:first-child {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     margin-top: 1rem;
   }
   & > * {
