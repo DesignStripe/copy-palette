@@ -10,7 +10,7 @@ const Container = styled.div`
   /* background-color: ${props => props.theme.colors.primary[200]}; */
   border: dashed 4px ${props => props.theme.colors.previewBorder};
   border-radius: 16px;
-  padding: 4rem 2rem;
+  padding: 6em 2rem;
   min-width: 80vw;
   height: 40px;
 `;

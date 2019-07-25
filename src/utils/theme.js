@@ -1,8 +1,10 @@
 const colorPalette = {
   primary: {
-    100: "#366ED8",
-    200: "#064acb",
-    300: "#083284"
+    100: "#B2CCFD",
+    200: "#8CB2FC",
+    300: "#064acb",
+    400: "#032A73",
+    500: "#021D4F"
   },
   secondary: "#083284",
   tertiary: "#F3A953",
@@ -19,20 +21,20 @@ const theme = {
   dark: {
     colors: {
       ...colorPalette,
-      background: colorPalette.primary[200],
+      background: colorPalette.primary[500],
       text: {
         default: colorPalette.neutrals[100],
-        disabled: colorPalette.primary[200]
+        disabled: colorPalette.primary[300]
       },
       options: {
-        background: colorPalette.primary[300],
+        background: colorPalette.primary[400],
         text: colorPalette.neutrals[100]
       },
       button: {
-        disabled: colorPalette.primary[200],
-        default: colorPalette.primary[100],
+        disabled: colorPalette.primary[400],
+        default: colorPalette.primary[300],
         text: colorPalette.neutrals[100],
-        textDisabled: colorPalette.primary[300]
+        textDisabled: colorPalette.primary[500]
       },
       badge: {
         bg: colorPalette.tertiary,
@@ -40,49 +42,49 @@ const theme = {
       },
       cta: {
         bg: colorPalette.neutrals[100],
-        text: colorPalette.primary[300]
+        text: colorPalette.primary[500]
       },
       input: {
         bg: colorPalette.neutrals[100],
-        text: colorPalette.primary[200]
+        text: colorPalette.primary[300]
       },
-      previewBorder: colorPalette.primary[300],
+      previewBorder: colorPalette.primary[400],
       slider: colorPalette.neutrals[100]
     }
   },
   light: {
     colors: {
       ...colorPalette,
-      background: colorPalette.neutrals[200],
+      background: colorPalette.primary[100],
       surface: "",
       text: {
-        default: colorPalette.primary[300],
+        default: colorPalette.primary[500],
         disabled: colorPalette.neutrals[100]
       },
       options: {
-        background: colorPalette.neutrals[100],
-        text: colorPalette.primary[300]
+        background: colorPalette.primary[200],
+        text: colorPalette.primary[500]
       },
       button: {
         disabled: colorPalette.primary[100],
-        default: colorPalette.primary[300],
+        default: colorPalette.primary[500],
         text: colorPalette.neutrals[100],
-        textDisabled: colorPalette.primary[300]
+        textDisabled: colorPalette.primary[500]
       },
       badge: {
         bg: colorPalette.tertiary,
         text: colorPalette.neutrals[500]
       },
       cta: {
-        bg: colorPalette.primary[300],
+        bg: colorPalette.primary[500],
         text: colorPalette.neutrals[100]
       },
       input: {
         bg: colorPalette.neutrals[200],
-        text: colorPalette.primary[300]
+        text: colorPalette.primary[500]
       },
-      previewBorder: colorPalette.primary[300],
-      slider: colorPalette.primary[300]
+      previewBorder: colorPalette.primary[200],
+      slider: colorPalette.primary[500]
     }
   },
   defaultColor: colorPalette.tertiary
