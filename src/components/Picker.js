@@ -39,10 +39,10 @@ const Popover = styled.div`
 
 const Cover = styled.div`
   position: absolute;
-  top: 28px;
-  right: 0;
+  top: -22px;
+  right: 0px;
   bottom: 0px;
-  left: -60px;
+  left: 22px;
 `;
 
 const UpIcon = styled(FiChevronUp)`

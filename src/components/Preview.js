@@ -9,8 +9,9 @@ const Container = styled.div`
   align-items: center;
   border: dashed 4px ${props => props.theme.colors.primary[500]};
   border-radius: 16px;
-  padding: 6em 2rem;
-  min-width: 80vw;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  width: 100%;
   height: 40px;
 `;
 
