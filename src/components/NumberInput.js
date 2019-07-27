@@ -5,45 +5,27 @@ const Input = styled.input`
   padding: 12px 21px;
   width: 16px;
   border: none;
-  background-color: ${props => props.theme.colors.input.bg};
-  color: ${props => props.theme.colors.input.text};
+  background-color: ${props => props.theme.colors.neutrals[100]};
+  color: ${props => props.theme.colors.neutrals[500]};
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
 `;
 
-const Minus = styled.button`
+const CustomButton = styled.button`
   border: none;
   width: 40px;
   height: 40px;
   border-radius: 8px;
   background-color: ${props =>
     props.disabled
-      ? props.theme.colors.button.disabled
-      : props.theme.colors.button.default};
+      ? props.theme.colors.primary[400]
+      : props.theme.colors.primary[100]};
   color: ${props =>
     props.disabled
-      ? props.theme.colors.button.textDisabled
-      : props.theme.colors.button.text};
+      ? props.theme.colors.primary[500]
+      : props.theme.colors.primary[500]};
 
-  font-size: 16px;
-  font-weight: bold;
-  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
-`;
-
-const Add = styled.button`
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background-color: ${props =>
-    props.disabled
-      ? props.theme.colors.button.disabled
-      : props.theme.colors.button.default};
-  color: ${props =>
-    props.disabled
-      ? props.theme.colors.button.textDisabled
-      : props.theme.colors.button.text};
   font-size: 16px;
   font-weight: bold;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
@@ -86,12 +68,12 @@ const NumberInput = ({ onChange, value, min, max, step }) => {
   return (
     <Row>
       <Input value={number} />
-      <Minus onClick={reduce} disabled={disableMinus}>
+      <CustomButton onClick={reduce} disabled={disableMinus}>
         -
-      </Minus>
-      <Add onClick={add} disabled={disableAdd}>
+      </CustomButton>
+      <CustomButton onClick={add} disabled={disableAdd}>
         +
-      </Add>
+      </CustomButton>
     </Row>
   );
 };

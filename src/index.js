@@ -12,17 +12,20 @@ import Toast from "./components/Toast";
 
 import createPalette from "./utils/createPalette";
 import getSvg from "./utils/getSvg";
-import theme from "./utils/theme";
+import theme from "./utils/newTheme";
 
 const GlobalStyle = createGlobalStyle`
   * {
     font-family: "Muli", sans-serif;
     margin: 0;  
   }
+  html {
+    background-color: ${props => props.theme.colors.primary[100]}
+  }
 `;
 
 function App() {
-  const [color, setColor] = useState(theme.defaultColor);
+  const [color, setColor] = useState(theme.dark.colors.tertiary);
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.1);
   const [isDark, setIsDark] = useState(true);

@@ -8,14 +8,15 @@ import { FiCopy } from "react-icons/fi";
 
 const Button = styled(MUButton)`
   && {
-    background-color: ${props => props.theme.colors.cta.bg} !important;
-    color: ${props => props.theme.colors.cta.text} !important;
+    background-color: ${props => props.theme.colors.neutrals[500]} !important;
+    color: ${props => props.theme.colors.neutrals[100]} !important;
 
     text-transform: capitalize !important;
     font-weight: bold !important;
     padding: 12px 24px !important;
     border-radius: 16px;
-    box-shadow: 0 8px 32px ${props => rgba(props.theme.colors.cta.bg, 0.4)};
+    box-shadow: 0 8px 32px
+      ${props => rgba(props.theme.colors.neutrals[500], 0.4)};
   }
 `;
 

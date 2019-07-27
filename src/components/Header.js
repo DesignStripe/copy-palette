@@ -17,7 +17,7 @@ const Container = styled.header`
     margin-bottom: 0;
   }
 
-  color: ${props => props.theme.colors.text.default};
+  color: ${props => props.theme.colors.neutrals[500]};
 `;
 
 const Header = ({ handleTheme }) => {

@@ -83,7 +83,7 @@ const theme = {
         bg: colorPalette.neutrals[200],
         text: colorPalette.primary[500]
       },
-      previewBorder: colorPalette.primary[200],
+      previewBorder: colorPalette.primary[500],
       slider: colorPalette.primary[500]
     }
   },
