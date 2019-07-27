@@ -12,7 +12,7 @@ const Container = styled.div`
     width: 1.5rem;
     height: 1.5rem;
     size: 1.5rem;
-    stroke: ${props => props.theme.colors.options.text};
+    stroke: ${props => props.theme.colors.neutrals[100]};
   }
 
   p {
@@ -20,7 +20,7 @@ const Container = styled.div`
   }
 
   font-size: 1rem;
-  color: ${props => props.theme.colors.options.text};
+  color: ${props => props.theme.colors.neutrals[100]};
 `;
 
 const Option = ({ icon, label, children }) => {

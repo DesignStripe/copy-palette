@@ -6,7 +6,7 @@ import useOutsideClick from "../hooks/useOutsideClick";
 
 const Container = styled.div`
   border-radius: 8px;
-  background-color: white;
+  background-color: ${props => props.theme.colors.neutrals[100]};
   padding: 0.5rem;
 
   display: flex;
@@ -45,6 +45,14 @@ const Cover = styled.div`
   left: -60px;
 `;
 
+const UpIcon = styled(FiChevronUp)`
+  stroke: ${props => props.theme.colors.neutrals[500]} !important;
+`;
+
+const DownIcon = styled(FiChevronDown)`
+  stroke: ${props => props.theme.colors.neutrals[500]} !important;
+`;
+
 const Picker = ({ onChange, value }) => {
   const ref = useRef();
 
@@ -65,11 +73,7 @@ const Picker = ({ onChange, value }) => {
   return (
     <Container ref={ref}>
       <Color color={color} onClick={toggle} />
-      {isOpen ? (
-        <FiChevronUp onClick={toggle} />
-      ) : (
-        <FiChevronDown onClick={toggle} />
-      )}
+      {isOpen ? <UpIcon onClick={toggle} /> : <DownIcon onClick={toggle} />}
       {isOpen && (
         <Popover>
           <Cover>

@@ -10,7 +10,7 @@ const Layout = styled.div`
   box-sizing: border-box;
 
   & > *:first-child {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     margin-top: 1rem;
   }
   & > * {
@@ -20,7 +20,7 @@ const Layout = styled.div`
     margin-bottom: 0;
   }
 
-  background-color: ${props => props.theme.colors.background};
+  background-color: ${props => props.theme.colors.primary[100]};
 `;
 
 export default Layout;

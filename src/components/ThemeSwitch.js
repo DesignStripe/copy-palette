@@ -3,7 +3,10 @@ import useDarkMode from "use-dark-mode";
 import Switch from "@material-ui/core/Switch";
 import { withStyles } from "@material-ui/core/styles";
 import { FiSun, FiMoon } from "react-icons/fi";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
+
+const DARK = "#212121";
+const LIGHT = "#f5f5f5";
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,14 +33,14 @@ const IOSSwitch = withStyles(theme => ({
     boxSizing: "content-box",
 
     "&$checked": {
-      color: "#064acb",
+      color: DARK,
       "& + $track": {
-        backgroundColor: "#fff",
+        backgroundColor: LIGHT,
         opacity: 1
       }
     },
     "&$focusVisible $thumb": {
-      color: "#083284"
+      color: DARK
     }
   },
   thumb: {
@@ -46,7 +49,7 @@ const IOSSwitch = withStyles(theme => ({
   },
   track: {
     borderRadius: 1000,
-    backgroundColor: "#083284",
+    backgroundColor: DARK,
     opacity: 1,
     transition: theme.transitions.create(["background-color", "border"])
   },

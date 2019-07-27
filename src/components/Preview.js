@@ -7,8 +7,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* background-color: ${props => props.theme.colors.primary[200]}; */
-  border: dashed 4px ${props => props.theme.colors.previewBorder};
+  border: dashed 4px ${props => props.theme.colors.primary[500]};
   border-radius: 16px;
   padding: 4rem 2rem;
   min-width: 80vw;
