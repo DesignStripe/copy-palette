@@ -7,6 +7,7 @@ const Layout = styled.div`
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  padding: 1rem 5vw;
   box-sizing: border-box;
 
   & > *:first-child {

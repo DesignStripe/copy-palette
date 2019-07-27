@@ -58,9 +58,10 @@ function App() {
             setContrast={setContrast}
             variations={variations}
             setVariations={setVariations}
+            svgPalette={svgPalette}
           />
 
-          <CopyButton text={svgPalette} />
+          {/* <CopyButton text={svgPalette} /> */}
         </Layout>
       </ToastProvider>
     </ThemeProvider>

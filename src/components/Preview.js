@@ -10,7 +10,8 @@ const Container = styled.div`
   border: dashed 4px ${props => props.theme.colors.primary[500]};
   border-radius: 16px;
   padding: 4rem 2rem;
-  min-width: 80vw;
+  box-sizing: border-box;
+  width: 100%;
   height: 40px;
 `;
 
