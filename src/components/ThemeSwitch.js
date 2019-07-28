@@ -13,11 +13,6 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  position: fixed;
-  padding: 2rem;
-  top: 0;
-  right: 0;
 `;
 
 const IOSSwitch = withStyles(theme => ({

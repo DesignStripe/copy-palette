@@ -28,6 +28,11 @@ function App() {
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.1);
   const [isDark, setIsDark] = useState(true);
+  const [type, setType] = useState(1);
+  const toggleType = () => {
+    if (type === 1) setType(2);
+    else if (type === 2) setType(1);
+  };
 
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette);
@@ -42,12 +47,14 @@ function App() {
         <Layout>
           <GlobalStyle />
 
-          <Header handleTheme={setIsDark} />
+          <Header handleTheme={setIsDark} handleType={toggleType} />
 
           <Preview
             palette={palette}
             variations={variations}
             svgPalette={svgPalette}
+            handleType={toggleType}
+            type={type}
           />
 
           <OptionsGroup

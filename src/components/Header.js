@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Badge from "./Badge";
+import Settings from "./Settings";
 import ThemeSwitch from "./ThemeSwitch";
 
 const Container = styled.header`
@@ -20,7 +21,7 @@ const Container = styled.header`
   color: ${props => props.theme.colors.neutrals[500]};
 `;
 
-const Header = ({ handleTheme }) => {
+const Header = ({ handleTheme, handleType }) => {
   return (
     <Container>
       <h1>CopyPalette</h1>
@@ -29,7 +30,7 @@ const Header = ({ handleTheme }) => {
         <Badge>COPY</Badge> and <Badge>PASTE</Badge>
       </p>
 
-      <ThemeSwitch onChange={handleTheme} />
+      <Settings handleTheme={handleTheme} handleType={handleType} />
     </Container>
   );
 };

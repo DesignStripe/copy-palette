@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Rectangle from "./Rectangle";
 import { svg } from "../constants";
@@ -33,17 +33,9 @@ const Text = styled.p`
   color: ${props => props.theme.colors.neutrals[500]};
 `;
 
-const Preview = ({ palette, variations, svgPalette }) => {
-  const [type, setType] = useState(2); // available types 1 & 2
-
-  const toggle = () => {
-    if (type === 1) setType(2);
-    else if (type === 2) setType(1);
-  };
-
+const Preview = ({ palette, variations, svgPalette, type }) => {
   return (
     <Container>
-      <FiSettings onClick={toggle} />
       {palette.map((color, index) => {
         const isBaseColor = index === variations;
         return (
