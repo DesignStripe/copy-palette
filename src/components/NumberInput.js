@@ -7,7 +7,7 @@ const Input = styled.input`
   border: none;
   background-color: ${props => props.theme.colors.neutrals[100]};
   color: ${props => props.theme.colors.neutrals[500]};
-  border-radius: 8px;
+  border-radius: ${props => props.theme.radius};
   font-size: 14px;
   font-weight: bold;
 `;
@@ -16,7 +16,7 @@ const CustomButton = styled.button`
   border: none;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: ${props => props.theme.radius};
   background-color: ${props =>
     props.disabled
       ? props.theme.colors.primary[400]

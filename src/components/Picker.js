@@ -5,7 +5,7 @@ import { SketchPicker } from "react-color";
 import useOutsideClick from "../hooks/useOutsideClick";
 
 const Container = styled.div`
-  border-radius: 8px;
+  border-radius: ${props => props.theme.radius};
   background-color: ${props => props.theme.colors.neutrals[100]};
   padding: 0.5rem;
 

@@ -8,7 +8,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   border: dashed 4px ${props => props.theme.colors.primary[500]};
-  border-radius: 16px;
+  border-radius: ${props => props.theme.radius};
   padding: 4rem 2rem;
   box-sizing: border-box;
   width: 100%;

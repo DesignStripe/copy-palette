@@ -25,7 +25,7 @@ const OptionsContainer = styled.div`
   align-items: center;
   /* width: calc(100% - 100px); */
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: ${props => props.theme.radius};
   width: 100%;
   margin-right: 2rem;
 

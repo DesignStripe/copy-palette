@@ -14,7 +14,7 @@ const Button = styled.button`
   width: 108px;
   height: 108px;
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: ${props => props.theme.radius};
   background-color: ${props => props.theme.colors.primary[500]};
 
   & > svg {
