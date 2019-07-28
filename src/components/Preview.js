@@ -9,9 +9,22 @@ const Container = styled.div`
   align-items: center;
   border: dashed 4px ${props => props.theme.colors.primary[500]};
   border-radius: 16px;
-  padding: 6em 2rem;
-  min-width: 80vw;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  width: 100%;
   height: 40px;
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Text = styled.p`
+  font-size: 10px;
+  color: ${props => props.theme.colors.neutrals[500]};
 `;
 
 const Preview = ({ palette, variations, svgPalette }) => {
@@ -20,7 +33,12 @@ const Preview = ({ palette, variations, svgPalette }) => {
       {/* <div dangerouslySetInnerHTML={{ __html: svgPalette }} /> */}
       {palette.map((color, index) => {
         const isBaseColor = index === variations;
-        return <Rectangle color={color} isBaseColor={isBaseColor} />;
+        return (
+          <Column>
+            <Rectangle color={color} isBaseColor={isBaseColor} />
+            <Text>{color}</Text>
+          </Column>
+        );
       })}
     </Container>
   );

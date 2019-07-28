@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Slider as MUISlider } from "@material-ui/core";
 
 const CustomSlider = styled(MUISlider)`
-  color: ${props => props.theme.colors.neutrals[500]} !important;
+  color: ${props => props.theme.colors.neutrals[100]} !important;
 `;
 
 const Slider = ({ value, onChange }) => (

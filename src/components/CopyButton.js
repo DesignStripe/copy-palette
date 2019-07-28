@@ -1,35 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import { rgba } from "polished";
+import { useToasts } from "react-toast-notifications";
 
-import MUButton from "@material-ui/core/Button";
+import { Tooltip } from "@material-ui/core";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 
-const Button = styled(MUButton)`
-  && {
-    background-color: ${props => props.theme.colors.neutrals[500]} !important;
-    color: ${props => props.theme.colors.neutrals[100]} !important;
+const Button = styled.button`
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 108px;
+  height: 108px;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: ${props => props.theme.colors.primary[500]};
 
-    text-transform: capitalize !important;
-    font-weight: bold !important;
-    padding: 12px 24px !important;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px
-      ${props => rgba(props.theme.colors.neutrals[500], 0.4)};
+  & > svg {
+    stroke: ${props => props.theme.colors.primary[100]};
+    width: 32px;
+    height: 32px;
   }
 `;
 
 const CopyButton = ({ text }) => {
+  const { addToast } = useToasts();
+
   return (
     <CopyToClipboard
       text={text}
-      // onCopy={() => this.setState({ copied: true })}
+      onCopy={() =>
+        addToast("Copied! 👏", { appearance: "success", autoDismiss: true })
+      }
     >
-      <Button variant="contained" color="primary">
-        {/* <FiCopy color={theme.colors.dark} style={{ marginRight: "0.5rem" }} /> */}
-        Copy SVG Palette
-      </Button>
+      <Tooltip title="🙌 Copy the SVG palette">
+        <Button>
+          <FiCopy />
+        </Button>
+      </Tooltip>
     </CopyToClipboard>
   );
 };
