@@ -23,9 +23,9 @@ const Container = styled.header`
 const Header = ({ handleTheme }) => {
   return (
     <Container>
-      <h1>Palette2Figma</h1>
+      <h1>CopyPalette</h1>
       <p>
-        Create your palette and use it in figma by just using{" "}
+        Create your palette and use it in Figma/Sketch by just using{" "}
         <Badge>COPY</Badge> and <Badge>PASTE</Badge>
       </p>
 
