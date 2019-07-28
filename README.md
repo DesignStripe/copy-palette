@@ -1,5 +1,5 @@
-# Palette2Figma
-Hassle-free color palettes export at SVG format. Figma (or Sketch) ready format to use them using COPY and PASTE.
+# CopyPalette
+Hassle-free color palettes export at SVG format for your favorite design tool (Figma, Sketch etc.).
 
 ## 🚧 To-do:
 
@@ -8,6 +8,6 @@ Hassle-free color palettes export at SVG format. Figma (or Sketch) ready format 
 - [X] Figma ui design
 - [X] Dark theme
 - [X] Copy toast message
-- [ ] Better CTA to copy the pallete
+- [X] Better CTA to copy the pallete
 - [ ] Logo design
 - [ ] Find some Beta testers through design channels (Reddit, DeisgnNews, etc.)
