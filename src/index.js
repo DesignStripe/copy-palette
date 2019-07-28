@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { ToastProvider } from "react-toast-notifications";
 
-import CopyButton from "./components/CopyButton";
 import Layout from "./components/Layout";
 import Header from "./components/Header";
 import OptionsGroup from "./components/OptionsGroup";
@@ -60,8 +59,6 @@ function App() {
             setVariations={setVariations}
             svgPalette={svgPalette}
           />
-
-          {/* <CopyButton text={svgPalette} /> */}
         </Layout>
       </ToastProvider>
     </ThemeProvider>
