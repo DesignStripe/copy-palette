@@ -10,22 +10,24 @@ function Rectangle({ color, isBaseColor }) {
   const size = isBaseColor ? BASE_SIZE : SIZE;
 
   return (
-    <CopyToClipboard text={`${color}`}>
-      <Tooltip title={`Click to copy 💅`}>
+    <Tooltip title={`Click to copy 💅`}>
+      <CopyToClipboard
+        text={`${color}`}
+        onCopy={() =>
+          addToast("Copied! 👏", { appearance: "success", autoDismiss: true })
+        }
+      >
         <svg
           x="0"
           y={GUTTER}
           width={size}
           height={size}
           style={{ margin: "1rem" }}
-          onClick={() =>
-            addToast("Copied! 👏", { appearance: "success", autoDismiss: true })
-          }
         >
           <rect rx="8" width={size} height={size} fill={color} />
         </svg>
-      </Tooltip>
-    </CopyToClipboard>
+      </CopyToClipboard>
+    </Tooltip>
   );
 }
 

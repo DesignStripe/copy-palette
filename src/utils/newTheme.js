@@ -18,7 +18,8 @@ const dark = {
     },
     white: "#f5f5f5",
     black: "#111"
-  }
+  },
+  radius: "8px"
 };
 
 const light = {
@@ -40,7 +41,8 @@ const light = {
     },
     white: "#f5f5f5",
     black: "#111"
-  }
+  },
+  radius: "8px"
 };
 
 const theme = {

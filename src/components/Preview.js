@@ -15,13 +15,30 @@ const Container = styled.div`
   height: 40px;
 `;
 
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Text = styled.p`
+  font-size: 10px;
+  color: ${props => props.theme.colors.neutrals[500]};
+`;
+
 const Preview = ({ palette, variations, svgPalette }) => {
   return (
     <Container>
       {/* <div dangerouslySetInnerHTML={{ __html: svgPalette }} /> */}
       {palette.map((color, index) => {
         const isBaseColor = index === variations;
-        return <Rectangle color={color} isBaseColor={isBaseColor} />;
+        return (
+          <Column>
+            <Rectangle color={color} isBaseColor={isBaseColor} />
+            <Text>{color}</Text>
+          </Column>
+        );
       })}
     </Container>
   );

@@ -1,17 +1,10 @@
-import React from "react";
+import styled from "styled-components";
 
-const Toast = ({ appearance, children }) => (
-  <div
-    style={{
-      color: appearance === "error" ? "red" : "black",
-      backgroundColor: "#083284",
-      borderRadius: "4px",
-      color: "#fff",
-      padding: "0.5rem"
-    }}
-  >
-    {children}
-  </div>
-);
+const Toast = styled.div`
+  background-color: ${props => props.theme.colors.primary[500]};
+  color: ${props => props.theme.colors.primary[100]};
+  border-radius: ${props => props.theme.radius};
+  padding: 0.5rem;
+`;
 
 export default Toast;
