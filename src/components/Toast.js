@@ -5,6 +5,7 @@ const Toast = styled.div`
   color: ${props => props.theme.colors.primary[100]};
   border-radius: ${props => props.theme.radius};
   padding: 0.5rem;
+  margin: 0.25rem;
 `;
 
 export default Toast;

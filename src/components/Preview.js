@@ -1,41 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Rectangle from "./Rectangle";
+import { svg } from "../constants";
+import { FiSettings } from "react-icons/fi";
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: dashed 4px ${props => props.theme.colors.primary[500]};
+  border: dashed 2px ${props => props.theme.colors.primary[500]};
   border-radius: ${props => props.theme.radius};
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   box-sizing: border-box;
   width: 100%;
-  height: 40px;
+  height: 64px;
 `;
 
 const Column = styled.div`
+  height: ${props => svg[props.type]}pxx;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 `;
 
 const Text = styled.p`
-  font-size: 10px;
+  justify-self: flex-end;
+  font-size: 12px;
+  font-weight: bold;
   color: ${props => props.theme.colors.neutrals[500]};
 `;
 
 const Preview = ({ palette, variations, svgPalette }) => {
+  const [type, setType] = useState(2); // available types 1 & 2
+
+  const toggle = () => {
+    if (type === 1) setType(2);
+    else if (type === 2) setType(1);
+  };
+
   return (
     <Container>
-      {/* <div dangerouslySetInnerHTML={{ __html: svgPalette }} /> */}
+      <FiSettings onClick={toggle} />
       {palette.map((color, index) => {
         const isBaseColor = index === variations;
         return (
-          <Column>
-            <Rectangle color={color} isBaseColor={isBaseColor} />
+          <Column type={type}>
+            <Rectangle type={type} color={color} isBaseColor={isBaseColor} />
             <Text>{color}</Text>
           </Column>
         );
