@@ -22,14 +22,25 @@ const Wrapper = styled.div`
 `;
 
 const Dropdown = styled.div`
-  padding: 2rem 1rem;
+  padding: 1rem;
   margin: 1rem;
   border-radius: ${props => props.theme.radius};
   background-color: ${props => props.theme.colors.primary[500]};
   color: ${props => props.theme.colors.primary[100]};
+
+  & > div {
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  & > div:last-child {
+    margin-bottom: 0;
+  }
+  & > div:hover {
+    color: ${props => props.color};
+  }
 `;
 
-const Settings = ({ handleTheme, handleType }) => {
+const Settings = ({ handleTheme, handleType, color }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   function handleClick(event) {
@@ -44,7 +55,10 @@ const Settings = ({ handleTheme, handleType }) => {
 
       <FiSettings onClick={handleClick} size={20} />
       <Popper id={id} open={open} anchorEl={anchorEl}>
-        <Dropdown onClick={handleType}>Toggle Palette Preview</Dropdown>
+        <Dropdown color={color}>
+          <div onClick={handleType}>Toggle Palette Preview</div>
+          <div>About</div>
+        </Dropdown>
       </Popper>
     </Wrapper>
   );

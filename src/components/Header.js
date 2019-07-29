@@ -21,7 +21,7 @@ const Container = styled.header`
   color: ${props => props.theme.colors.neutrals[500]};
 `;
 
-const Header = ({ handleTheme, handleType }) => {
+const Header = ({ handleTheme, handleType, color }) => {
   return (
     <Container>
       <h1>CopyPalette</h1>
@@ -30,7 +30,11 @@ const Header = ({ handleTheme, handleType }) => {
         <Badge>COPY</Badge> and <Badge>PASTE</Badge>
       </p>
 
-      <Settings handleTheme={handleTheme} handleType={handleType} />
+      <Settings
+        color={color}
+        handleTheme={handleTheme}
+        handleType={handleType}
+      />
     </Container>
   );
 };

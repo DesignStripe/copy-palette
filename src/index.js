@@ -47,7 +47,11 @@ function App() {
         <Layout>
           <GlobalStyle />
 
-          <Header handleTheme={setIsDark} handleType={toggleType} />
+          <Header
+            handleTheme={setIsDark}
+            handleType={toggleType}
+            color={color}
+          />
 
           <Preview
             palette={palette}
