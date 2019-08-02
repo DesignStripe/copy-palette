@@ -10,5 +10,5 @@ Hassle-free color palettes export at SVG format for your favorite design tool (F
 - [x] Dark theme
 - [x] Copy toast message
 - [x] Better CTA to copy the pallete
-- [ ] Logo design
+- [x] Logo design
 - [ ] Find some Beta testers through design channels (Reddit, DeisgnerNews, etc.)
