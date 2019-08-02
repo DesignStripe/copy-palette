@@ -1,6 +1,12 @@
 import { SIZE, GUTTER, BASE_SIZE } from "../constants";
 
-function getSvg(colors) {
+function getSvg(colors, type) {
+  if (type === 1) return rounded(colors);
+  else if (type === 2) return sharp(colors);
+  else return null;
+}
+
+function rounded(colors) {
   const length = colors.length;
 
   return `
@@ -26,7 +32,7 @@ function getSvg(colors) {
   `;
 }
 
-function getSvg2(colors) {
+function sharp(colors) {
   const length = colors.length;
 
   return `

@@ -24,7 +24,7 @@ function Main({
   toggleType
 }) {
   const palette = createPalette(color, variations, contrast);
-  const svgPalette = getSvg(palette);
+  const svgPalette = getSvg(palette, type);
 
   return (
     <React.Fragment>
