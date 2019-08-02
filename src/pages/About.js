@@ -9,27 +9,16 @@ const Container = styled.div`
   justify-content: center;
   align-items: flex-start;
 
-  color: ${props => props.theme.colors.neutrals[500]};
+  width: 70%;
+  margin-top: 5rem;
 
   & > h1 {
     align-self: center;
-
     margin-bottom: 2rem;
     font-weight: bold;
   }
-  & > h2 {
-    margin-bottom: 1rem;
-  }
-  & > p {
-    margin-bottom: 2rem;
-  }
-  & > p > ol {
-    margin: 1rem;
-  }
-  & > p > ol > li > p {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-  }
+
+  color: ${props => props.theme.colors.neutrals[500]};
 `;
 
 const FAQContainer = styled.div`
@@ -41,6 +30,9 @@ const FAQContainer = styled.div`
 
   & > *:first-child {
     margin-bottom: 1rem;
+  }
+  & > p {
+    line-height: 1.7;
   }
 `;
 

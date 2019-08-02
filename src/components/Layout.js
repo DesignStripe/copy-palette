@@ -4,7 +4,7 @@ const Layout = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 1rem 5vw;

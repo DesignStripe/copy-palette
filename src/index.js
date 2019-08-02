@@ -27,7 +27,7 @@ function App() {
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.1);
   const [isDark, setIsDark] = useState(true);
-  const [type, setType] = useState(1);
+  const [type, setType] = useState(2);
   const toggleType = () => {
     if (type === 1) setType(2);
     else if (type === 2) setType(1);
