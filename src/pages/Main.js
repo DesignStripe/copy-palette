@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 import OptionsGroup from "../components/OptionsGroup";
 import Preview from "../components/Preview";
@@ -7,6 +8,10 @@ import Badge from "../components/Badge";
 
 import createPalette from "../utils/createPalette";
 import getSvg from "../utils/getSvg";
+
+const P = styled.p`
+  color: ${props => props.theme.colors.neutrals[500]};
+`;
 
 function Main({
   color,
@@ -26,10 +31,10 @@ function Main({
       <h1>
         <Link to="/">CopyPalette</Link>
       </h1>
-      <p>
+      <P>
         Create your palette and use it in Figma/Sketch by just using{" "}
         <Badge>COPY</Badge> and <Badge>PASTE</Badge>
-      </p>
+      </P>
 
       <Preview
         palette={palette}
