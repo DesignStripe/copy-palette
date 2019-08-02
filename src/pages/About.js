@@ -44,11 +44,15 @@ const FAQContainer = styled.div`
   }
 `;
 
-const FAQ = ({ question, answer }) => {
+const FAQ = ({ question, answer, isHtml }) => {
   return (
     <FAQContainer>
       <h2>{question}</h2>
-      <p>{answer}</p>
+      {isHtml ? (
+        <div dangerouslySetInnerHTML={{ __html: answer }} />
+      ) : (
+        <p>{answer}</p>
+      )}
     </FAQContainer>
   );
 };
@@ -57,7 +61,12 @@ const About = () => (
   <Container>
     <h1>About</h1>
     {faqs.map((faq, index) => (
-      <FAQ key={index} question={faq.question} answer={faq.answer} />
+      <FAQ
+        key={index}
+        question={faq.question}
+        answer={faq.answer}
+        isHtml={faq.isHtml}
+      />
     ))}
   </Container>
 );
