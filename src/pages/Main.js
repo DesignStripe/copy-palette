@@ -2,6 +2,8 @@ import React from "react";
 
 import OptionsGroup from "../components/OptionsGroup";
 import Preview from "../components/Preview";
+import Link from "../components/Link";
+import Badge from "../components/Badge";
 
 import createPalette from "../utils/createPalette";
 import getSvg from "../utils/getSvg";
@@ -21,6 +23,14 @@ function Main({
 
   return (
     <React.Fragment>
+      <h1>
+        <Link to="/">CopyPalette</Link>
+      </h1>
+      <p>
+        Create your palette and use it in Figma/Sketch by just using{" "}
+        <Badge>COPY</Badge> and <Badge>PASTE</Badge>
+      </p>
+
       <Preview
         palette={palette}
         variations={variations}
