@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Badge from "./Badge";
 import Settings from "./Settings";
 import ThemeSwitch from "./ThemeSwitch";
+import Link from "./Link";
 
 const Container = styled.header`
   display: flex;
@@ -24,7 +25,9 @@ const Container = styled.header`
 const Header = ({ handleTheme, handleType, color }) => {
   return (
     <Container>
-      <h1>CopyPalette</h1>
+      <h1>
+        <Link to="/">CopyPalette</Link>
+      </h1>
       <p>
         Create your palette and use it in Figma/Sketch by just using{" "}
         <Badge>COPY</Badge> and <Badge>PASTE</Badge>

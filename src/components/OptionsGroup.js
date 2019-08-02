@@ -27,12 +27,12 @@ const OptionsContainer = styled.div`
   padding: 2rem;
   border-radius: ${props => props.theme.radius};
   width: 100%;
-  margin-right: 2rem;
+  margin-right: 1rem;
 
   background-color: ${props => props.theme.colors.primary[500]};
 
   & > * {
-    margin-right: 32px;
+    margin-right: 2rem;
   }
   & > *:last-child {
     margin-right: 0;

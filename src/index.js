@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { ToastProvider } from "react-toast-notifications";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import About from "./pages/About";
+import Main from "./pages/Main";
 import Layout from "./components/Layout";
 import Header from "./components/Header";
-import OptionsGroup from "./components/OptionsGroup";
-import Preview from "./components/Preview";
 import Toast from "./components/Toast";
 
-import createPalette from "./utils/createPalette";
-import getSvg from "./utils/getSvg";
 import theme from "./utils/newTheme";
 
 const GlobalStyle = createGlobalStyle`
@@ -34,45 +33,42 @@ function App() {
     else if (type === 2) setType(1);
   };
 
-  const palette = createPalette(color, variations, contrast);
-  const svgPalette = getSvg(palette);
+  const main = () => (
+    <Main
+      color={color}
+      setColor={setColor}
+      contrast={contrast}
+      setContrast={setContrast}
+      variations={variations}
+      setVariations={setVariations}
+      type={type}
+      toggleType={toggleType}
+    />
+  );
 
   return (
-    <ThemeProvider theme={isDark ? theme.dark : theme.light}>
-      <ToastProvider
-        components={{ Toast }}
-        placement="bottom-center"
-        autoDismissTimeout={1500}
-      >
-        <Layout>
-          <GlobalStyle />
+    <Router>
+      <ThemeProvider theme={isDark ? theme.dark : theme.light}>
+        <ToastProvider
+          components={{ Toast }}
+          placement="bottom-center"
+          autoDismissTimeout={1500}
+        >
+          <Layout>
+            <GlobalStyle />
 
-          <Header
-            handleTheme={setIsDark}
-            handleType={toggleType}
-            color={color}
-          />
+            <Header
+              handleTheme={setIsDark}
+              handleType={toggleType}
+              color={color}
+            />
 
-          <Preview
-            palette={palette}
-            variations={variations}
-            svgPalette={svgPalette}
-            handleType={toggleType}
-            type={type}
-          />
-
-          <OptionsGroup
-            setColor={setColor}
-            color={color}
-            contrast={contrast}
-            setContrast={setContrast}
-            variations={variations}
-            setVariations={setVariations}
-            svgPalette={svgPalette}
-          />
-        </Layout>
-      </ToastProvider>
-    </ThemeProvider>
+            <Route exact path="/" component={main} />
+            <Route path="/about" component={About} />
+          </Layout>
+        </ToastProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
 
