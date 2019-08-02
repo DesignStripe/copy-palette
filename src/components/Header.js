@@ -6,19 +6,15 @@ import Settings from "./Settings";
 
 const Container = styled.header`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 
-  /* padding-top: 4rem; */
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
 
-  & > * {
-    margin-bottom: 16px;
-  }
-  & > *:last-child {
-    margin-bottom: 0;
-  }
-
+  background-color: ${props => props.theme.colors.neutrals[100]};
   color: ${props => props.theme.colors.neutrals[500]};
 `;
 

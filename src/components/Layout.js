@@ -10,10 +10,6 @@ const Layout = styled.div`
   padding: 1rem 5vw;
   box-sizing: border-box;
 
-  & > *:first-child {
-    margin-bottom: 4rem;
-    margin-top: 1rem;
-  }
   & > * {
     margin-bottom: 2rem;
   }

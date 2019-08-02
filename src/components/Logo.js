@@ -10,10 +10,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  position: fixed;
+  /* position: fixed;
   padding: 2rem;
   top: 0;
-  left: 0;
+  left: 0; */
 
   & > *:first-child {
     margin-right: 1rem;

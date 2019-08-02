@@ -12,10 +12,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  position: fixed;
+  /* position: fixed;
   padding: 2rem;
   top: 0;
-  right: 0;
+  right: 0; */
 
   & > * {
     margin-left: 2rem;

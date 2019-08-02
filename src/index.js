@@ -54,15 +54,15 @@ function App() {
           placement="bottom-center"
           autoDismissTimeout={1500}
         >
+          <GlobalStyle />
+
+          <Header
+            handleTheme={setIsDark}
+            handleType={toggleType}
+            color={color}
+          />
+
           <Layout>
-            <GlobalStyle />
-
-            <Header
-              handleTheme={setIsDark}
-              handleType={toggleType}
-              color={color}
-            />
-
             <Route exact path="/" component={main} />
             <Route path="/about" component={About} />
           </Layout>
