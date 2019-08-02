@@ -3,7 +3,9 @@ import { useToasts } from "react-toast-notifications";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Tooltip } from "@material-ui/core";
-import { SIZE, GUTTER, BASE_SIZE, svg } from "../constants";
+
+import { svg } from "../constants";
+import { getRandomInterjection } from "../utils/interjections";
 
 function Rectangle({ color, isBaseColor, type }) {
   const { addToast } = useToasts();
@@ -14,7 +16,10 @@ function Rectangle({ color, isBaseColor, type }) {
       <CopyToClipboard
         text={`${color}`}
         onCopy={() =>
-          addToast("Copied! 👏", { appearance: "success", autoDismiss: true })
+          addToast(`${getRandomInterjection()}! Copied! 👏`, {
+            appearance: "success",
+            autoDismiss: true
+          })
         }
       >
         <svg

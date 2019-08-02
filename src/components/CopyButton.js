@@ -6,6 +6,8 @@ import { Tooltip } from "@material-ui/core";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 
+import { getRandomInterjection } from "../utils/interjections";
+
 const Button = styled.button`
   align-self: flex-end;
   display: flex;
@@ -31,7 +33,10 @@ const CopyButton = ({ text }) => {
     <CopyToClipboard
       text={text}
       onCopy={() =>
-        addToast("Copied! 👏", { appearance: "success", autoDismiss: true })
+        addToast(`${getRandomInterjection()}! Copied! 👏`, {
+          appearance: "success",
+          autoDismiss: true
+        })
       }
     >
       <Tooltip title="🙌 Copy the SVG palette">
