@@ -10,7 +10,7 @@ function Rectangle({ color, isBaseColor, type }) {
   const size = isBaseColor ? svg[type].baseSize : svg[type].size;
 
   return (
-    <Tooltip title={`Click to copy 💅`}>
+    <Tooltip title={`Copy HEX code 💅`}>
       <CopyToClipboard
         text={`${color}`}
         onCopy={() =>

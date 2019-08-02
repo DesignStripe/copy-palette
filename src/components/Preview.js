@@ -41,7 +41,7 @@ const Preview = ({ palette, variations, svgPalette, type }) => {
         return (
           <Column type={type}>
             <Rectangle type={type} color={color} isBaseColor={isBaseColor} />
-            <Text>{color}</Text>
+            <Text>{color.replace("#", "")}</Text>
           </Column>
         );
       })}
