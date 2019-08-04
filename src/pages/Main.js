@@ -56,10 +56,10 @@ function Main({
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette, type);
 
-  useEffect(() => {
-    console.log("Mounted");
-    return () => console.log("Unmounted");
-  }, []);
+  // useEffect(() => {
+  //   console.log("Mounted");
+  //   return () => console.log("Unmounted");
+  // }, []);
 
   return (
     <Container>
