@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import OptionsGroup from "../components/OptionsGroup";
@@ -55,6 +55,11 @@ function Main({
 }) {
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette, type);
+
+  useEffect(() => {
+    console.log("Mounted");
+    return () => console.log("Unmounted");
+  }, []);
 
   return (
     <Container>

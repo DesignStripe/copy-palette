@@ -55,7 +55,7 @@ function App() {
         >
           <GlobalStyle />
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
-            <Route exact path="/" component={main} />
+            <Route exact path="/" render={main} />
             <Route path="/about" component={About} />
           </Layout>
         </ToastProvider>
