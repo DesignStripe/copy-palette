@@ -10,7 +10,6 @@ const Container = styled.div`
   align-items: flex-start;
 
   width: 70%;
-  margin-top: 5rem;
 
   & > h1 {
     align-self: center;

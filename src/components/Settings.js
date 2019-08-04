@@ -1,9 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { FiSettings, FiThermometer, FiGift, FiInfo } from "react-icons/fi";
+import { withRouter } from "react-router-dom";
+
+import {
+  FiSettings,
+  FiThermometer,
+  FiGift,
+  FiInfo,
+  FiEdit
+} from "react-icons/fi";
 import Popper from "@material-ui/core/Popper";
 
-import Link from "../components/Link";
 import ThemeSwitch from "./ThemeSwitch";
 
 const Wrapper = styled.div`
@@ -60,7 +67,7 @@ const Item = styled.div`
   }
 `;
 
-const Settings = ({ handleTheme, handleType, color }) => {
+const Settings = ({ history, handleTheme, handleType, color }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   function handleClick(event) {
@@ -77,19 +84,26 @@ const Settings = ({ handleTheme, handleType, color }) => {
       <Popper id={id} open={open} anchorEl={anchorEl}>
         <Dropdown>
           <Item color={color} onClick={handleType}>
-            <FiGift />
-            <p>Toggle Palette Preview</p>
+            <FiEdit />
+            <p>Toggle Palette</p>
           </Item>
-          <Link to="/about">
-            <Item color={color}>
-              <FiInfo />
-              <p>About</p>
-            </Item>
-          </Link>
+          <Item color={color} onClick={() => history.push("/about")}>
+            <FiInfo />
+            <p>About</p>
+          </Item>
+          <Item
+            color={color}
+            onClick={() =>
+              (window.location.href = "https://www.paypal.me/DimitrisRaptis/5")
+            }
+          >
+            <FiGift />
+            <p>Support</p>
+          </Item>
         </Dropdown>
       </Popper>
     </Wrapper>
   );
 };
 
-export default Settings;
+export default withRouter(Settings);

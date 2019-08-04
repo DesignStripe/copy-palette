@@ -5,6 +5,7 @@ import Header from "./Header";
 
 const Container = styled.div`
   min-height: 100vh;
+  box-sizing: border-box;
   background-color: ${props => props.theme.colors.primary[100]};
 `;
 

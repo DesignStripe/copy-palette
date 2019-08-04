@@ -86,7 +86,7 @@ function Main({
         svgPalette={svgPalette}
       />
 
-      <Footer />
+      <Footer color={color} />
     </Container>
   );
 }

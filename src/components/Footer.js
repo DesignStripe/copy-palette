@@ -22,19 +22,19 @@ const Sup = styled.sup`
 `;
 
 const Anchor = styled.a`
-  color: ${props => props.theme.colors.neutrals[500]};
+  color: ${props => props.color};
   font-weight: bold;
   &:focus {
-    outline-color: ${props => props.theme.colors.neutrals[500]};
+    outline-color: ${props => props.color};
   }
 `;
 
-const Footer = ({ baseColor }) => {
+const Footer = ({ color }) => {
   return (
     <Container>
       <Sup>
         Designed and Built by{" "}
-        <Anchor href="https://twitter.com/d__raptis" baseColor={baseColor}>
+        <Anchor href="https://twitter.com/d__raptis" color={color}>
           @draptis
         </Anchor>
       </Sup>
