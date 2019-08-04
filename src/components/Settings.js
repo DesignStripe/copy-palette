@@ -35,6 +35,10 @@ const Dropdown = styled.div`
   & > div:last-child {
     margin-bottom: 0;
   }
+
+  & > a {
+    color: ${props => props.theme.colors.primary[100]};
+  }
 `;
 
 const Item = styled.div`
@@ -45,12 +49,8 @@ const Item = styled.div`
 
   cursor: pointer;
 
-  &:hover,
-  & > a:hover {
+  &:hover {
     color: ${props => props.color};
-  }
-  & > a {
-    color: ${props => props.theme.colors.primary[100]};
   }
   & > * {
     margin-right: 0.5rem;
@@ -80,10 +80,12 @@ const Settings = ({ handleTheme, handleType, color }) => {
             <FiGift />
             <p>Toggle Palette Preview</p>
           </Item>
-          <Item color={color}>
-            <FiInfo />
-            <Link to="/about">About</Link>
-          </Item>
+          <Link to="/about">
+            <Item color={color}>
+              <FiInfo />
+              <p>About</p>
+            </Item>
+          </Link>
         </Dropdown>
       </Popper>
     </Wrapper>

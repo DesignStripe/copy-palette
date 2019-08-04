@@ -51,7 +51,9 @@ const FAQ = ({ question, answer, isHtml }) => {
 
 const About = () => (
   <Container>
-    <h1>About</h1>
+    <h1>
+      <b>About</b>
+    </h1>
     {faqs.map((faq, index) => (
       <FAQ
         key={index}
