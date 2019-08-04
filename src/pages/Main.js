@@ -68,7 +68,7 @@ function Main({
           <Link to="/">CopyPalette</Link>
         </h1>
         <P>
-          Create your palette and use it in Figma/Sketch by just using{" "}
+          Create your SVG palette and use it in Figma/Sketch by just using{" "}
           <Badge>COPY</Badge> and <Badge>PASTE</Badge>
         </P>
       </InfoContainer>
