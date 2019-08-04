@@ -8,6 +8,36 @@ import Badge from "../components/Badge";
 
 import createPalette from "../utils/createPalette";
 import getSvg from "../utils/getSvg";
+import Footer from "../components/Footer";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    margin-bottom: 2rem;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 4rem;
+  & > * {
+    margin-bottom: 1rem;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+`;
 
 const P = styled.p`
   color: ${props => props.theme.colors.neutrals[500]};
@@ -27,14 +57,16 @@ function Main({
   const svgPalette = getSvg(palette, type);
 
   return (
-    <React.Fragment>
-      <h1>
-        <Link to="/">CopyPalette</Link>
-      </h1>
-      <P>
-        Create your palette and use it in Figma/Sketch by just using{" "}
-        <Badge>COPY</Badge> and <Badge>PASTE</Badge>
-      </P>
+    <Container>
+      <InfoContainer>
+        <h1>
+          <Link to="/">CopyPalette</Link>
+        </h1>
+        <P>
+          Create your palette and use it in Figma/Sketch by just using{" "}
+          <Badge>COPY</Badge> and <Badge>PASTE</Badge>
+        </P>
+      </InfoContainer>
 
       <Preview
         palette={palette}
@@ -53,7 +85,9 @@ function Main({
         setVariations={setVariations}
         svgPalette={svgPalette}
       />
-    </React.Fragment>
+
+      <Footer />
+    </Container>
   );
 }
 

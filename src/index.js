@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./pages/About";
 import Main from "./pages/Main";
 import Layout from "./components/Layout";
-import Header from "./components/Header";
 import Toast from "./components/Toast";
 
 import theme from "./utils/newTheme";
@@ -55,14 +54,7 @@ function App() {
           autoDismissTimeout={1500}
         >
           <GlobalStyle />
-
-          <Header
-            handleTheme={setIsDark}
-            handleType={toggleType}
-            color={color}
-          />
-
-          <Layout>
+          <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" component={main} />
             <Route path="/about" component={About} />
           </Layout>

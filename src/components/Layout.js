@@ -1,13 +1,22 @@
+import React from "react";
 import styled from "styled-components";
 
-const Layout = styled.div`
-  padding: 1rem;
+import Header from "./Header";
+
+const Container = styled.div`
+  min-height: 100vh;
+  background-color: ${props => props.theme.colors.primary[100]};
+`;
+
+const MainPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+
+  min-height: 100%;
   padding: 1rem 5vw;
+  margin-top: 6rem; /* Top Navigation height */
   box-sizing: border-box;
 
   & > * {
@@ -19,5 +28,14 @@ const Layout = styled.div`
 
   background-color: ${props => props.theme.colors.primary[100]};
 `;
+
+const Layout = ({ children, handleTheme, handleType, color }) => {
+  return (
+    <Container>
+      <Header handleTheme={handleTheme} handleType={handleType} color={color} />
+      <MainPageContainer>{children}</MainPageContainer>
+    </Container>
+  );
+};
 
 export default Layout;
