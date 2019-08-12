@@ -1,6 +1,9 @@
 # CopyPalette
 
-Hassle-free color palettes export at SVG format for your favorite design tool (Figma, Sketch etc.).
+<p align='center'> 
+<a href="https://woddd.run/" target="_blank"><img width="150" src="./assets/logo.png"></a><br><br>
+    Hassle-free color palettes export at SVG format for your favorite design tool (Figma, Sketch etc.)
+</p>
 
 ## 🚧 To-do:
 
