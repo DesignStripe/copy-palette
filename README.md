@@ -5,6 +5,8 @@
     Hassle-free color palettes export at SVG format for your favorite design tool (Figma, Sketch etc.)
 </p>
 
+<img width="100%" src="./assets/demo.gif">
+
 ## 🚧 To-do:
 
 - [x] [zwicon](https://www.zwicon.com/cheatsheet.html)
