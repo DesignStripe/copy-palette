@@ -13,8 +13,6 @@
 
 CopyPalette was built for designers that struggle (or just feel bored) to generate a consistent monochromatic color palette. By fine-tuning some parameters, you can effortlessly create different shades and depths of a hue and export your palette in a single click!
 
-_For more examples and usage, please refer to the [About page](https://copypalette.netlify.com/about)._
-
 ## Development setup
 
 ```sh
