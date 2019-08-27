@@ -27,7 +27,7 @@ yarn start
 
 ## Meta
 
-Dimitris Raptis – [@YourTwitter](https://twitter.com/d__raptis) – dimitrisraptis96@gmail.com
+Dimitris Raptis – [@d__raptis](https://twitter.com/d__raptis) – dimitrisraptis96@gmail.com
 
 ## License
 
