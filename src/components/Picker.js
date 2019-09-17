@@ -13,6 +13,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   > svg {
     margin-left: 0.5rem;
