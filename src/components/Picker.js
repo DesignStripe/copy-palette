@@ -71,7 +71,7 @@ const Picker = ({ onChange, value }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Container ref={ref}>
+    <Container ref={ref} onClick={toggle}>
       <Color color={color} onClick={toggle} />
       {isOpen ? <UpIcon onClick={toggle} /> : <DownIcon onClick={toggle} />}
       {isOpen && (
