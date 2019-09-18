@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { ToastProvider } from "react-toast-notifications";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import MetaTags from "react-meta-tags";
 
 import About from "./pages/About";
 import Main from "./pages/Main";
@@ -54,6 +55,15 @@ function App() {
           autoDismissTimeout={1500}
         >
           <GlobalStyle />
+          {/* <MetaTags>
+            <title>CopyPalette | Seamless color palette generation</title>
+            <meta
+              name="description"
+              content="Create consistent monochromatic color palettes and export them in a blink 🤙"
+            />
+            <meta property="og:title" content="CopyPalette" />
+            <meta property="og:image" content="og-image.png" />
+          </MetaTags> */}
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" render={main} />
             <Route path="/about" component={About} />
