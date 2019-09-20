@@ -10,6 +10,7 @@ import Layout from "./components/Layout";
 import Toast from "./components/Toast";
 
 import theme from "./utils/newTheme";
+import ProducHuntWidget from "./components/ProductHuntWidget";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -54,6 +55,7 @@ function App() {
           autoDismissTimeout={1500}
         >
           <GlobalStyle />
+          <ProducHuntWidget isDark={isDark} />
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" render={main} />
             <Route path="/about" component={About} />
