@@ -5097,6 +5097,11 @@ inquirer@^6.2.2:
     strip-ansi "^5.1.0"
     through "^2.3.6"
 
+interjection-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/interjection-js/-/interjection-js-1.0.0.tgz#f9c21136a53d56f15adf9732f1b11aa14e0bf2c3"
+  integrity sha512-yCinxD9HaMiu3ogLM4pQ7085lA9HJJxUbFI5htRxok8PPqx4W07NJwF7HHngiBSig+aJ+iftRiKNO3rY55zUzA==
+
 internal-ip@^4.2.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/internal-ip/-/internal-ip-4.3.0.tgz#845452baad9d2ca3b69c635a137acb9a0dad0907"

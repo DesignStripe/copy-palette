@@ -91,3 +91,5 @@ build
 
 # DynamoDB Local files
 .dynamodb/
+
+.DS_Store

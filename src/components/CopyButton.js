@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { useToasts } from "react-toast-notifications";
+import getRandomInterjection from "interjection-js";
 
 import { Tooltip } from "@material-ui/core";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
-
-import { getRandomInterjection } from "../utils/interjections";
 
 const Button = styled.button`
   align-self: flex-end;

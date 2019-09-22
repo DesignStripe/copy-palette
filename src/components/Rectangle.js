@@ -5,7 +5,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Tooltip } from "@material-ui/core";
 
 import { svg } from "../constants";
-import { getRandomInterjection } from "../utils/interjections";
+import getRandomInterjection from "interjection-js";
 
 function Rectangle({ color, isBaseColor, type }) {
   const { addToast } = useToasts();
