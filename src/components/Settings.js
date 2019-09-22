@@ -7,11 +7,13 @@ import {
   FiThermometer,
   FiGift,
   FiInfo,
-  FiEdit
+  FiEdit,
+  FiHeart
 } from "react-icons/fi";
 import Popper from "@material-ui/core/Popper";
 
 import ThemeSwitch from "./ThemeSwitch";
+import { Tooltip } from "@material-ui/core";
 
 const Wrapper = styled.div`
   display: flex;
@@ -67,6 +69,13 @@ const Item = styled.div`
   }
 `;
 
+const tweet = () => {
+  const url =
+    "https://twitter.com/intent/tweet?text=Copy%20Palette%20%7C%20Seamless%20color%20palette%20generation%20🎨%0A%0Ahttps://copypalette.netlify.com";
+  const win = window.open(url, "_blank");
+  win.focus();
+};
+
 const Settings = ({ history, handleTheme, handleType, color }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -102,6 +111,12 @@ const Settings = ({ history, handleTheme, handleType, color }) => {
           </Item>
         </Dropdown>
       </Popper>
+
+      <Tooltip title="Share love 🙌" placement="bottom">
+        <div>
+          <FiHeart size={20} onClick={tweet} fill={color} color={color} />
+        </div>
+      </Tooltip>
     </Wrapper>
   );
 };

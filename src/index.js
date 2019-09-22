@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  const [color, setColor] = useState(theme.dark.colors.tertiary);
+  const [color, setColor] = useState("#F7446D"); //theme.dark.colors.tertiary
   const [variations, setVariations] = useState(4);
   const [contrast, setContrast] = useState(0.1);
   const [isDark, setIsDark] = useState(true);
