@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { SketchPicker } from "react-color";
@@ -72,17 +72,17 @@ const Picker = ({ onChange, value }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Container ref={ref} onClick={toggle}>
+    <Container
+      onClick={() => {
+        if (!isOpen) toggle();
+      }}
+    >
       <Color color={color} onClick={toggle} />
-      {isOpen ? <UpIcon onClick={toggle} /> : <DownIcon onClick={toggle} />}
+      {isOpen ? <UpIcon /> : <DownIcon />}
       {isOpen && (
-        <Popover>
+        <Popover ref={ref}>
           <Cover>
-            <SketchPicker
-              color={color}
-              onClose={() => setIsOpen(false)}
-              onChange={handleChange}
-            />
+            <SketchPicker color={color} onChange={handleChange} />
           </Cover>
         </Popover>
       )}
