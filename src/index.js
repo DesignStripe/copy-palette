@@ -43,6 +43,7 @@ function App() {
       setVariations={setVariations}
       type={type}
       toggleType={toggleType}
+      isDark={isDark}
     />
   );
 
@@ -55,7 +56,7 @@ function App() {
           autoDismissTimeout={1500}
         >
           <GlobalStyle />
-          <ProducHuntWidget isDark={isDark} />
+          <ProducHuntWidget isDark={isDark} isAbsolute />
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" render={main} />
             <Route path="/about" component={About} />

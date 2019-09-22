@@ -5,6 +5,7 @@ import OptionsGroup from "../components/OptionsGroup";
 import Preview from "../components/Preview";
 import Link from "../components/Link";
 import Badge from "../components/Badge";
+import ProductHuntWidget from "../components/ProductHuntWidget";
 
 import createPalette from "../utils/createPalette";
 import getSvg from "../utils/getSvg";
@@ -51,7 +52,8 @@ function Main({
   variations,
   setVariations,
   type,
-  toggleType
+  toggleType,
+  isDark
 }) {
   const palette = createPalette(color, variations, contrast);
   const svgPalette = getSvg(palette, type);
@@ -71,6 +73,7 @@ function Main({
           Create your SVG palette and use it in Figma/Sketch by just using{" "}
           <Badge>COPY</Badge> and <Badge>PASTE</Badge>
         </P>
+        {/* <ProductHuntWidget isAbsolute={false} isDark={isDark} /> */}
       </InfoContainer>
 
       <Preview
