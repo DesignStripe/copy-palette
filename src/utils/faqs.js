@@ -1,6 +1,6 @@
 // 🤔Inspo: https://www.invisionapp.com/inside-design/quick-guide-color-palette/
 
-const faqs = [
+const faqs = color => [
   {
     question: "What is CopyPalette?",
     answer:
@@ -21,8 +21,7 @@ const faqs = [
   },
   {
     question: "Who created CopyPalette?",
-    answer:
-      "<p>CopyPalette was created as a fun side project by <a href='https://twitter.com/d__raptis'> Dimitris Raptis</a> who used to mess around infinite Copy-Paste commands to create a nice color palette. Dimitris is a passionate designer who codes. Crafting amazing experiences for everybody is his continuous challenge.</p>",
+    answer: `<p>CopyPalette was created as a fun side project by <a  target="_blank" rel="noopener" href='https://twitter.com/d__raptis' style="font-weight: bold;color: ${color}"> Dimitris Raptis</a> who used to mess around infinite Copy-Paste commands to create a nice color palette. Dimitris is a passionate designer who codes. Crafting amazing experiences for everybody is his continuous challenge.</p>`,
     isHtml: true
   }
 ];

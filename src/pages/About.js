@@ -48,12 +48,12 @@ const FAQ = ({ question, answer, isHtml }) => {
   );
 };
 
-const About = () => (
+const About = ({ color }) => (
   <Container>
     <h1>
       <b>About</b>
     </h1>
-    {faqs.map((faq, index) => (
+    {faqs(color).map((faq, index) => (
       <FAQ
         key={index}
         question={faq.question}

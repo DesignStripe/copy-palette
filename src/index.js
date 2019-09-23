@@ -47,6 +47,8 @@ function App() {
     />
   );
 
+  const about = () => <About color={color} />;
+
   return (
     <Router>
       <ThemeProvider theme={isDark ? theme.dark : theme.light}>
@@ -59,7 +61,7 @@ function App() {
           <ProducHuntWidget isDark={isDark} isAbsolute />
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" render={main} />
-            <Route path="/about" component={About} />
+            <Route path="/about" component={about} />
           </Layout>
         </ToastProvider>
       </ThemeProvider>
