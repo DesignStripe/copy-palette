@@ -22,8 +22,8 @@ const faqs = [
   {
     question: "Who created CopyPalette?",
     answer:
-      "CopyPalette was created as a fun side project by Dimitris Raptis who used to mess around infinite Copy-Paste to create a nice color palette. Dimitris is a passionate designer who codes. Crafting amazing experiences for everybody is his continuous challenge.",
-    isHtml: false
+      "<p>CopyPalette was created as a fun side project by <a href='https://twitter.com/d__raptis'> Dimitris Raptis</a> who used to mess around infinite Copy-Paste commands to create a nice color palette. Dimitris is a passionate designer who codes. Crafting amazing experiences for everybody is his continuous challenge.</p>",
+    isHtml: true
   }
 ];
 
