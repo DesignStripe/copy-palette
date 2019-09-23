@@ -1,5 +1,3 @@
-// 🤔Inspo: https://www.invisionapp.com/inside-design/quick-guide-color-palette/
-
 const faqs = color => [
   {
     question: "What is CopyPalette?",
