@@ -103,7 +103,7 @@ const Settings = ({ history, handleTheme, handleType, color }) => {
           <Item
             color={color}
             onClick={() =>
-              (window.location.href = "https://www.paypal.me/DimitrisRaptis/5")
+              (window.location.href = "https://www.buymeacoffee.com/dmraptis")
             }
           >
             <FiGift />
