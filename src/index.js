@@ -11,6 +11,7 @@ import Toast from "./components/Toast";
 
 import theme from "./utils/newTheme";
 import ProducHuntWidget from "./components/ProductHuntWidget";
+import SubscribeForm from "./components/SubscribeForm";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -62,6 +63,7 @@ function App() {
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" render={main} />
             <Route path="/about" component={about} />
+            <SubscribeForm />
           </Layout>
         </ToastProvider>
       </ThemeProvider>
