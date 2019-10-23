@@ -6,5 +6,5 @@
 [[redirects]]
   from = "https://copypalette.netlify.com/*"
   to = "https://copypalette.app/:splat"
-  status = 301!
+  status = 301
   force = true
