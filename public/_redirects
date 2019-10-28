@@ -1,4 +1,3 @@
 /*    /index.html  200
 
-# Redirect default Netlify subdomain to primary domain
 https://copypalette.netlify.com/* https://copypalette.app/:splat 301!
