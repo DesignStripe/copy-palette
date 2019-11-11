@@ -71,7 +71,7 @@ const Item = styled.div`
 
 const tweet = () => {
   const url =
-    "https://twitter.com/intent/tweet?text=Copy%20Palette%20%7C%20Seamless%20color%20palette%20generation%20🎨%0A%0Ahttps://copypalette.netlify.com";
+    "https://twitter.com/intent/tweet?text=Copy%20Palette%20%7C%20Seamless%20color%20palette%20generation%20🎨%0A%0Ahttps://copypalette.app";
   const win = window.open(url, "_blank");
   win.focus();
 };
@@ -103,7 +103,7 @@ const Settings = ({ history, handleTheme, handleType, color }) => {
           <Item
             color={color}
             onClick={() =>
-              (window.location.href = "https://www.paypal.me/DimitrisRaptis/5")
+              (window.location.href = "https://www.buymeacoffee.com/dmraptis")
             }
           >
             <FiGift />

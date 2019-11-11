@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const Sup = styled.sup`
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: ${props => props.theme.colors.neutrals[500]};
 `;
 
