@@ -19,7 +19,7 @@ const faqs = color => [
   },
   {
     question: "Who created CopyPalette?",
-    answer: `<p>CopyPalette was created as a fun side project by <a  target="_blank" rel="noopener" href='https://twitter.com/d__raptis' style="font-weight: bold;color: ${color}"> Dimitris Raptis</a> who used to mess around infinite Copy-Paste commands to create a nice color palette. Dimitris is a passionate designer who codes. Crafting amazing experiences for everybody is his continuous challenge.</p>`,
+    answer: `<p>CopyPalette was created as a fun side project by <a  target="_blank" rel="noopener" href='https://twitter.com/d__raptis' style="font-weight: bold;color: ${color}"> Jim Raptis</a> who used to mess around infinite Copy-Paste commands to create a nice color palette. Jim is a passionate designer who codes. Crafting amazing experiences for everybody is his continuous challenge.</p>`,
     isHtml: true
   }
 ];
