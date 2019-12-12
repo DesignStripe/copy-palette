@@ -1,7 +1,7 @@
 # CopyPalette
 
 <p align='center'> 
-<a href="https://copypalette.netlify.com/" target="_blank"><img width="150" src="./assets/logo.png"></a><br><br>
+<a href="https://www.copypalette.app/" target="_blank"><img width="150" src="./assets/logo.png"></a><br><br>
     Hassle-free color palettes exported to SVG format for your favorite design tool (Figma, Sketch etc.)
 </p>
 
