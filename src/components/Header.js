@@ -14,8 +14,8 @@ const Container = styled.header`
   padding: 2rem;
   box-sizing: border-box;
 
-  position: fixed;
-  top: 0;
+  ${"" /* position: fixed;
+  top: 0; */}
 
   background-color: ${props => props.theme.colors.neutrals[100]};
   color: ${props => props.theme.colors.neutrals[500]};

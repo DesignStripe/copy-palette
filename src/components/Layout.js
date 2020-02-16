@@ -17,7 +17,7 @@ const MainPageContainer = styled.div`
 
   min-height: 100%;
   padding: 1rem 5vw;
-  margin-top: 6rem; /* Top Navigation height */
+  margin-top: 1rem; /* Top Navigation height */
   box-sizing: border-box;
 
   & > * {

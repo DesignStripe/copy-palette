@@ -11,6 +11,7 @@ import Toast from "./components/Toast";
 
 import theme from "./utils/newTheme";
 import ProducHuntWidget from "./components/ProductHuntWidget";
+import NotificationBar from "./components/NotificationBar";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -59,6 +60,7 @@ function App() {
         >
           <GlobalStyle />
           <ProducHuntWidget isDark={isDark} isAbsolute />
+          {/* <NotificationBar color={color} /> */}
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" render={main} />
             <Route path="/about" component={about} />

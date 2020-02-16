@@ -49,7 +49,8 @@ const theme = {
         text: colorPalette.primary[300]
       },
       previewBorder: colorPalette.primary[400],
-      slider: colorPalette.neutrals[100]
+      slider: colorPalette.neutrals[100],
+      popup: { bg: "red", text: "white" }
     }
   },
   light: {
@@ -84,7 +85,8 @@ const theme = {
         text: colorPalette.primary[500]
       },
       previewBorder: colorPalette.primary[500],
-      slider: colorPalette.primary[500]
+      slider: colorPalette.primary[500],
+      popup: { bg: "yellow", color: "black" }
     }
   },
   defaultColor: colorPalette.tertiary

@@ -17,7 +17,8 @@ const dark = {
       500: "#f5f5f5"
     },
     white: "#f5f5f5",
-    black: "#111"
+    black: "#111",
+    popup: { bg: "red", text: "white" }
   },
   radius: "8px"
 };
@@ -40,7 +41,8 @@ const light = {
       500: "#212121"
     },
     white: "#f5f5f5",
-    black: "#111"
+    black: "#111",
+    popup: { bg: "red", text: "white" }
   },
   radius: "8px"
 };
