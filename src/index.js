@@ -60,7 +60,7 @@ function App() {
         >
           <GlobalStyle />
           <ProducHuntWidget isDark={isDark} isAbsolute />
-          {/* <NotificationBar color={color} /> */}
+          <NotificationBar color={color} />
           <Layout handleTheme={setIsDark} handleType={toggleType} color={color}>
             <Route exact path="/" render={main} />
             <Route path="/about" component={about} />
