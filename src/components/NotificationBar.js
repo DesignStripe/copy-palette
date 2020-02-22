@@ -52,7 +52,7 @@ const NotificationBar = ({ color }) => {
       {!isSeen && (
         <Container
           color={"#DA5631"}
-          href="https://www.designValley.club"
+          href="https://www.producthunt.com/posts/designvalley"
           target="_blank"
         >
           <PHLogo />
