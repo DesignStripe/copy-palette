@@ -31,12 +31,6 @@ Dimitris Raptis – [@d__raptis](https://twitter.com/d__raptis) – dimitrisrapt
 
 ## License
 
-Distributed under the [MIT license](./LICENSE).
+Copyright (c) 2019-present Jim Raptis. All rights reserved.
 
-## Contributing
-
-1. Fork it (<https://github.com/dimitrisraptis96/copy-palette/fork>)
-2. Create your feature branch (`git checkout -b feature/coolBranch`)
-3. Commit your changes (`git commit -am 'Add the most cool feature ever'`)
-4. Push to the branch (`git push origin feature/coolBranch`)
-5. Create a new Pull Request
+**The code, design and idea in this repository are intellectual property of the individual mentioned above (unless otherwise stated) and as such CANNOT be copied, modified, sublicensed or redistributed without permission from the author.**
