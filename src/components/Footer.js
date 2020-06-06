@@ -37,7 +37,7 @@ const Footer = ({ color }) => {
         <Anchor href="https://twitter.com/d__raptis" color={color}>
           @draptis
         </Anchor>
-        {" "}And{" "}
+        {" "}and{" "}
         <Anchor href="https://designstripe.com/" color={color}>
           DesignStripe
         </Anchor>
