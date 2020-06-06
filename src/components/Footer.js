@@ -39,7 +39,7 @@ const Footer = ({ color }) => {
         </Anchor>
         {" "}and{" "}
         <Anchor href="https://designstripe.com/" color={color}>
-          DesignStripe
+          designstripe
         </Anchor>
       </Sup>
     </Container>
