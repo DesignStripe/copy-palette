@@ -37,6 +37,10 @@ const Footer = ({ color }) => {
         <Anchor href="https://twitter.com/d__raptis" color={color}>
           @draptis
         </Anchor>
+        {" "}and{" "}
+        <Anchor href="https://designstripe.com/" color={color}>
+          DesignStripe
+        </Anchor>
       </Sup>
     </Container>
   );
