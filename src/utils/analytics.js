@@ -20,7 +20,6 @@ if (typeof window !== "undefined") {
 
 // Track pageview on route change
 history.listen(() => {
-  console.log('tracking')
   analytics.page();
 });
 
